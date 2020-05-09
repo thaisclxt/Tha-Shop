@@ -2,17 +2,41 @@
 
 ## Classes
 
-- [ ] Manutenção do mercado
+- [ ] Mercado
   - [ ] Atributos
     - [ ] Itens
   - [ ] Métodos
+    - [ ] Carregar uma lista padrão de itens
     - [ ] Adição de itens
     - [ ] Remoção de itens
+    - [ ] Exibição de itens
+    - [ ] Ajuste de todos os dados do item
+    - [ ] Concluir ajustes
+- [ ] Cliente
+  - [ ] Atributos
+    - [ ] Recipiente
+  - [ ] Métodos
+    - [ ] Adição de itens no recipiente
+    - [ ] Remoção de itens
+    - [ ] Exibição de itens
+    - [ ] Trocar recipiente
+    - [ ] Prever custo total
+    - [ ] Cancelar compra
+    - [ ] Confirmar compra
+    - [ ] Opção secreta: Roubar
 - [ ] Caixa
   - [x] Atributos
   - [ ] Métodos
+    - [ ] Exibição do total
+    - [ ] Exibição da lista de compras do cliente
+    - [ ] Adição de todos os itens
+    - [ ] Adição de itens individuais
+    - [ ] Remoção de todos os itens
+    - [ ] Remoção de itens individuais
     - [ ] Cancelar compra
     - [ ] Receber a quantia paga
+    - [ ] Exibir como retornar o troco, em notas e moedas
+    - [ ] Concluir compra
 
 ## Objetivo
 

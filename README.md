@@ -1,5 +1,19 @@
 # ThaíShop
 
+## Classes
+
+- [ ] Manutenção do mercado
+  - [ ] Atributos
+    - [ ] Itens
+  - [ ] Métodos
+    - [ ] Adição de itens
+    - [ ] Remoção de itens
+- [ ] Caixa
+  - [x] Atributos
+  - [ ] Métodos
+    - [ ] Cancelar compra
+    - [ ] Receber a quantia paga
+
 ## Objetivo
 
 Criar um programa pra simular um mercado.

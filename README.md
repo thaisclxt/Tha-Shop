@@ -4,7 +4,9 @@
 
 - [ ] Mercado
   - [ ] Atributos
-    - [ ] Itens
+    - [ ] Nome do produto
+    - [ ] Código do produto
+    - [ ] Valor do produto
   - [ ] Métodos
     - [ ] Carregar uma lista padrão de itens
     - [ ] Adição de itens
@@ -14,7 +16,9 @@
     - [ ] Concluir ajustes
 - [ ] Cliente
   - [ ] Atributos
-    - [ ] Recipiente
+    - [ ] Carrinho grande
+    - [ ] Carrinho pequeno
+    - [ ] Cesta
   - [ ] Métodos
     - [ ] Adição de itens no recipiente
     - [ ] Remoção de itens

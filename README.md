@@ -2,7 +2,7 @@
 
 ## Classes
 
-- [ ] Mercado
+- [X] Mercado
   - [ ] Atributos
     - [ ] Nome do produto
     - [ ] Código do produto
@@ -47,7 +47,7 @@
 Criar um programa pra simular um mercado.
 
 - O programa precisa ter:
-  - [ ] Tela para manutenção do mercado
+  - [X] Tela para manutenção do mercado
     - [ ] Adição de itens à venda
     - [ ] Remoção de itens à venda
     - [ ] Exibir itens que estão à venda

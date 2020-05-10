@@ -41,10 +41,10 @@ Criar um programa pra simular um mercado.
 
 - O programa precisa ter:
   - [X] Tela para manutenção do mercado
-    - [ ] Adição de itens à venda
+    - [X] Adição de itens à venda
     - [ ] Remoção de itens à venda
     - [ ] Exibir itens que estão à venda
-    - [ ] Carregar uma lista padrão de itens
+    - [X] Carregar uma lista padrão de itens
     - [ ] Ajuste de todos os dados do item
     - [ ] Concluir ajustes
   - [ ] Tela para o cliente

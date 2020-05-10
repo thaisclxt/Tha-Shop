@@ -1,5 +1,7 @@
 package com.amor;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
@@ -92,13 +94,13 @@ public class Main
         switch (option)
         {
             case 1:
-                ArrayList<String> listaPadrao = new ArrayList<>();
-                listaPadrao.add("Vagem");
-                listaPadrao.add("Shampoo");
-                listaPadrao.add("Gergelim");
-                listaPadrao.add("Óleo de coco");
-                listaPadrao.add("Cola em bastão");
-                listaPadrao.add("Semente de girassol");
+                ArrayList<Item> listaPadrao = new ArrayList<Item>();
+                listaPadrao.add(new Item("Vagem", 2566, 1.63));
+                listaPadrao.add(new Item("Shampoo", 3389, 11.90));
+                listaPadrao.add(new Item("Gergelim", 1001, 4.14));
+                listaPadrao.add(new Item("Óleo de coco", 1285, 18.85));
+                listaPadrao.add(new Item("Cola em bastão", 5411, 3.00));
+                listaPadrao.add(new Item("Semente de girassol", 1002, 3.75));
 
                 break;
             case 2:

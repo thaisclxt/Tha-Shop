@@ -6,10 +6,16 @@ public class Item
     private int code;
     private double price;
 
-    public Item(String name, int code, double price)
+    public Item()
     {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
-        this.code = code;
-        this.price = price;
     }
 }

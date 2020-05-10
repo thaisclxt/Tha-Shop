@@ -2,23 +2,16 @@
 
 ## Classes
 
-- [X] Mercado
-  - [ ] Atributos
-    - [ ] Nome do produto
-    - [ ] Código do produto
-    - [ ] Valor do produto
-  - [ ] Métodos
-    - [ ] Carregar uma lista padrão de itens
-    - [ ] Adição de itens
-    - [ ] Remoção de itens
-    - [ ] Exibição de itens
-    - [ ] Ajuste de todos os dados do item
-    - [ ] Concluir ajustes
-- [ ] Cliente
-  - [ ] Atributos
-    - [ ] Carrinho grande
-    - [ ] Carrinho pequeno
-    - [ ] Cesta
+- [X] Item
+  - [X] Atributos
+    - [X] Nome do produto
+    - [X] Código do produto
+    - [X] Valor do produto
+- [X] Recipientes
+  - [X] Atributos
+    - [X] Carrinho grande
+    - [X] Carrinho pequeno
+    - [X] Cesta
   - [ ] Métodos
     - [ ] Adição de itens no recipiente
     - [ ] Remoção de itens

@@ -57,13 +57,13 @@ public class Main
             System.out.println("│    Senha inválida!                          │");
             System.out.println("│                                             │");
             System.out.println("│    1- Informar a senha novamente            │");
-            System.out.println("│    2- Voltar para o Menu Inicial            │");
+            System.out.println("│    0- Voltar para o Menu Inicial            │");
             System.out.println("└─────────────────────────────────────────────┘");
 
             int option2 = read.nextInt();
 
-            if (option2 == 1) { login(); }
-            if (option2 == 2) { main(null); }
+            if (option2 == 0) { main(null); }
+            else { login(); }
         }
 
         Mercado proprietario = new Mercado();

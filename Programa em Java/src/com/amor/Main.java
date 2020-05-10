@@ -1,7 +1,5 @@
 package com.amor;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
@@ -91,19 +89,48 @@ public class Main
 
         int option = Main.read.nextInt();
 
+        ArrayList<Item> list = new ArrayList<>();
+
         switch (option)
         {
             case 1:
-                ArrayList<Item> listaPadrao = new ArrayList<Item>();
-                listaPadrao.add(new Item("Vagem", 2566, 1.63));
-                listaPadrao.add(new Item("Shampoo", 3389, 11.90));
-                listaPadrao.add(new Item("Gergelim", 1001, 4.14));
-                listaPadrao.add(new Item("Óleo de coco", 1285, 18.85));
-                listaPadrao.add(new Item("Cola em bastão", 5411, 3.00));
-                listaPadrao.add(new Item("Semente de girassol", 1002, 3.75));
 
+                list.add(new Item("Vagem", 2566, 1.63));
+                list.add(new Item("Shampoo", 3389, 11.90));
+                list.add(new Item("Gergelim", 1001, 4.14));
+                list.add(new Item("Óleo de coco", 1285, 18.85));
+                list.add(new Item("Cola em bastão", 5411, 3.00));
+                list.add(new Item("Semente de girassol", 1002, 3.75));
                 break;
             case 2:
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Adição de itens à venda                  │");
+                System.out.println("│                                             │");
+                System.out.println("│    Quantos itens deseja adicionar ?         │");
+                System.out.println("└─────────────────────────────────────────────┘");
+
+                int quantidade = read.nextInt();
+
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Adição de itens à venda                  │");
+                System.out.println("│                                             │");
+                System.out.println("│    Primeiramente, informe o nome do         │");
+                System.out.println("│    produto, segundamente, o código e por    │");
+                System.out.println("│    fim, o valor a ser pago.                 │");
+                System.out.println("└─────────────────────────────────────────────┘");
+
+                for (int add = 0; add < quantidade; add++)
+                {
+                    String name = read.next();
+                    int code = read.nextInt();
+                    double price = Double.parseDouble(read.next());
+
+                    list.add(new Item(name, code, price));
+                }
                 break;
             case 3:
                 break;

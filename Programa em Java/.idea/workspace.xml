@@ -68,7 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1588989254633</updated>
       <workItem from="1588989260247" duration="604000" />
-      <workItem from="1589050200814" duration="5259000" />
+      <workItem from="1589050200814" duration="5673000" />
+      <workItem from="1589062791314" duration="5550000" />
     </task>
     <servers />
   </component>
@@ -85,5 +86,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="462" y="125" key="FileChooserDialogImpl" timestamp="1589066229530">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="462" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1589066229530" />
+    <state x="65" y="4" key="new project wizard" timestamp="1589066241210">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="65" y="4" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1589066241210" />
+    <state x="478" y="131" key="refactoring.ChangeSignatureDialog" timestamp="1589065412140">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="478" y="131" key="refactoring.ChangeSignatureDialog/0.0.1366.768@0.0.1366.768" timestamp="1589065412140" />
   </component>
 </project>

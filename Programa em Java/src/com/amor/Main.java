@@ -1,4 +1,5 @@
 package com.amor;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main
@@ -66,8 +67,56 @@ public class Main
             else { login(); }
         }
 
-        Mercado proprietario = new Mercado();
-        proprietario.screen();
+        mercado();
 
+    }
+
+    public static void mercado()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Tela para manutenção do mercado          │");
+        System.out.println("│                                             │");
+        System.out.println("│    1- Carregar uma lista padrão de itens    │");
+        System.out.println("│    2- Adição de itens à venda               │");
+        System.out.println("│    3- Remoção de itens à venda              │");
+        System.out.println("│    4- Exibir itens que estão à venda        │");
+        System.out.println("│    5- Ajuste de todos os dados do item      │");
+        System.out.println("│    6- Concluir ajustes                      │");
+        System.out.println("│    0- Voltar para o Menu Inicial            │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int option = Main.read.nextInt();
+
+        switch (option)
+        {
+            case 1:
+                ArrayList<String> listaPadrao = new ArrayList<>();
+                listaPadrao.add("Vagem");
+                listaPadrao.add("Shampoo");
+                listaPadrao.add("Gergelim");
+                listaPadrao.add("Óleo de coco");
+                listaPadrao.add("Cola em bastão");
+                listaPadrao.add("Semente de girassol");
+
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 0:
+                Main.main(null);
+                break;
+            default:
+                mercado();
+                break;
+        }
     }
 }

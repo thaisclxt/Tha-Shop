@@ -48,7 +48,11 @@ public class Main
 
         int password = read.nextInt();
 
-        if (password != 84178160)
+        if (password == 84178160)
+        {
+            mercado();
+        }
+        else
         {
             System.out.println("┌─────────────────────────────────────────────┐");
             System.out.println("│ ############# T H A Í S H O P ############# │");
@@ -66,9 +70,6 @@ public class Main
             if (option2 == 0) { main(null); }
             else { login(); }
         }
-
-        mercado();
-
     }
 
     public static void mercado()
@@ -102,6 +103,11 @@ public class Main
                     list.add(new Item("Óleo de coco", 1285, 18.85));
                     list.add(new Item("Cola em bastão", 5411, 3.00));
                     list.add(new Item("Semente de girassol", 1002, 3.75));
+
+                    for (Item products : list)
+                    {
+                        System.out.println(products);
+                    }
                     break;
                 case 2:
                     System.out.println("┌─────────────────────────────────────────────┐");
@@ -154,14 +160,9 @@ public class Main
                     System.out.println("│                                             │");
                     System.out.println("│  • Itens à venda                            │");
                     System.out.println("│                                             │");
-                    System.out.println("│    A seguir, será exibida uma lista com os  │");
-                    System.out.println("│    itens que estão à venda.                 │");
+                    System.out.println("│    A seguir, será exibido todos os itens    │");
+                    System.out.println("│    que estão à venda.                       │");
                     System.out.println("└─────────────────────────────────────────────┘");
-
-                    for (Item products : list)
-                    {
-                        System.out.println(products);
-                    }
                     break;
                 case 5:
                     break;

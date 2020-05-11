@@ -86,7 +86,6 @@ public class Main
             System.out.println("│    3- Remoção de itens à venda              │");
             System.out.println("│    4- Exibir itens que estão à venda        │");
             System.out.println("│    5- Ajuste de todos os dados do item      │");
-            System.out.println("│    6- Concluir ajustes                      │");
             System.out.println("│    0- Voltar para o Menu Inicial            │");
             System.out.println("└─────────────────────────────────────────────┘");
 
@@ -165,8 +164,39 @@ public class Main
                     System.out.println("└─────────────────────────────────────────────┘");
                     break;
                 case 5:
-                    break;
-                case 6:
+                    System.out.println("┌─────────────────────────────────────────────┐");
+                    System.out.println("│ ############# T H A Í S H O P ############# │");
+                    System.out.println("│                                             │");
+                    System.out.println("│  • Ajuste de todos os dados do item         │");
+                    System.out.println("│                                             │");
+                    System.out.println("│    Informe o index do produto que deseja    │");
+                    System.out.println("│    ajustar e em seguida, os novos dados do  │");
+                    System.out.println("│    item.                                    │");
+                    System.out.println("└─────────────────────────────────────────────┘");
+
+                    int index = read.nextInt();
+
+                    String name = read.next();
+                    int code = read.nextInt();
+                    double price = Double.parseDouble(read.next());
+
+                    System.out.println("┌─────────────────────────────────────────────┐");
+                    System.out.println("│ ############# T H A Í S H O P ############# │");
+                    System.out.println("│                                             │");
+                    System.out.println("│  • Ajuste de todos os dados do item         │");
+                    System.out.println("│                                             │");
+                    System.out.println("│    1- Concluir ajuste                       │");
+                    System.out.println("│    2- Cancelar ajuste                       │");
+                    System.out.println("└─────────────────────────────────────────────┘");
+
+                    int option3 = read.nextInt();
+
+                    if (option3 == 1)
+                    {
+                        list.remove(index);
+                        list.add(new Item(name, code, price));
+                        break;
+                    }
                     break;
                 case 0:
                     Main.main(null);

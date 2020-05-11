@@ -26,10 +26,10 @@ public class Main
                 loginProprietario();
                 break;
             case 2:
-                loginCliente();
+                new Cliente();
                 break;
             case 3:
-                loginCaixa();
+                new Caixa();
                 break;
             case 0:
                 break;
@@ -220,133 +220,6 @@ public class Main
                             System.out.println("└─────────────────────────────────────────────┘");
                         }
                     }
-                    break;
-                case 0:
-                    Main.main(null);
-                    break;
-                default:
-                    break;
-            }
-            if (option == 0) { break; }
-        }
-    }
-
-    public static void loginCliente()
-    {
-        while (true)
-        {
-            System.out.println("┌─────────────────────────────────────────────┐");
-            System.out.println("│ ############# T H A Í S H O P ############# │");
-            System.out.println("│                                             │");
-            System.out.println("│  • Tela para o cliente                      │");
-            System.out.println("│                                             │");
-            System.out.println("│    1- Colocar itens no recipiente           │");
-            System.out.println("│    2- Remover itens                         │");
-            System.out.println("│    3- Ver todos os itens atuais             │");
-            System.out.println("│    4- Trocar recipiente                     │");
-            System.out.println("│    5- Prever custo total                    │");
-            System.out.println("│    6- Cancelar compra                       │");
-            System.out.println("│    7- Confirmar compra                      │");
-            System.out.println("│    8- Opção secreta: Roubar                 │");
-            System.out.println("│    0- Voltar para o Menu Inicial            │");
-            System.out.println("└─────────────────────────────────────────────┘");
-
-            int option = read.nextInt();
-
-            switch (option)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-                case 8:
-                    break;
-                case 0:
-                    Main.main(null);
-                    break;
-                default:
-                    break;
-            }
-            if (option == 0) { break; }
-        }
-    }
-
-    public static void loginCaixa()
-    {
-        System.out.println("┌─────────────────────────────────────────────┐");
-        System.out.println("│ ############# T H A Í S H O P ############# │");
-        System.out.println("│                                             │");
-        System.out.println("│  • Login como Caixa                         │");
-        System.out.println("│                                             │");
-        System.out.println("│    Informe a senha: ********                │");
-        System.out.println("└─────────────────────────────────────────────┘");
-
-        int password = read.nextInt();
-
-        if (password == 68130947)
-        {
-            caixa();
-        }
-        else
-        {
-            System.out.println("┌─────────────────────────────────────────────┐");
-            System.out.println("│ ############# T H A Í S H O P ############# │");
-            System.out.println("│                                             │");
-            System.out.println("│  • Login como Caixa                         │");
-            System.out.println("│                                             │");
-            System.out.println("│    Senha inválida!                          │");
-            System.out.println("│                                             │");
-            System.out.println("│    1- Informar a senha novamente            │");
-            System.out.println("│    0- Voltar para o Menu Inicial            │");
-            System.out.println("└─────────────────────────────────────────────┘");
-
-            int option2 = read.nextInt();
-
-            if (option2 == 0) { main(null); }
-            else { caixa(); }
-        }
-    }
-
-    public static void caixa()
-    {
-        while (true)
-        {
-            System.out.println("┌─────────────────────────────────────────────┐");
-            System.out.println("│ ############# T H A Í S H O P ############# │");
-            System.out.println("│                                             │");
-            System.out.println("│  • Tela para o caixa                        │");
-            System.out.println("│                                             │");
-            System.out.println("│    1- Exibição                              │");
-            System.out.println("│    2- Adição                                │");
-            System.out.println("│    3- Remoção                               │");
-            System.out.println("│    4- Concluir compra                       │");
-            System.out.println("│    5- Cancelar compra                       │");
-            System.out.println("│    0- Voltar para o Menu Inicial            │");
-            System.out.println("└─────────────────────────────────────────────┘");
-
-            int option = read.nextInt();
-
-            switch (option)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
                     break;
                 case 0:
                     Main.main(null);

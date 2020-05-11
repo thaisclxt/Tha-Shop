@@ -21,19 +21,6 @@
     - [ ] Cancelar compra
     - [ ] Confirmar compra
     - [ ] Opção secreta: Roubar
-- [ ] Caixa
-  - [x] Atributos
-  - [ ] Métodos
-    - [ ] Exibição do total
-    - [ ] Exibição da lista de compras do cliente
-    - [ ] Adição de todos os itens
-    - [ ] Adição de itens individuais
-    - [ ] Remoção de todos os itens
-    - [ ] Remoção de itens individuais
-    - [ ] Cancelar compra
-    - [ ] Receber a quantia paga
-    - [ ] Exibir como retornar o troco, em notas e moedas
-    - [ ] Concluir compra
 
 ## Objetivo
 
@@ -42,12 +29,12 @@ Criar um programa pra simular um mercado.
 - O programa precisa ter:
   - [X] Tela para manutenção do mercado
     - [X] Adição de itens à venda
-    - [ ] Remoção de itens à venda
-    - [ ] Exibir itens que estão à venda
+    - [X] Remoção de itens à venda
+    - [X] Exibir itens que estão à venda
     - [X] Carregar uma lista padrão de itens
-    - [ ] Ajuste de todos os dados do item
-    - [ ] Concluir ajustes
-  - [ ] Tela para o cliente
+    - [X] Ajuste de todos os dados do item
+    - [X] Concluir ajustes
+  - [X] Tela para o cliente
     - [ ] Colocar itens no "recipiente"
     - [ ] Remover itens
     - [ ] Ver todos os itens atuais
@@ -56,7 +43,7 @@ Criar um programa pra simular um mercado.
     - [ ] Cancelar compra
     - [ ] Confirmar compra
     - [ ] *Opção secreta: Roubar*
-  - [ ] Tela para o Caixa
+  - [X] Tela para o Caixa
     - [ ] Exibição do total
     - [ ] Exibição da lista de compras do cliente
     - [ ] Adicionar itens

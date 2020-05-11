@@ -13,8 +13,16 @@ public class Item
         this.price = price;
     }
 
+    public String getName() { return name; }
+    public int getCode() { return code; }
+    public double getPrice() { return price; }
+
+
+/*
     public String toString()
     {
         return "Nome do produto: " + name + "\n" + "Código do produto: " + code + "\n" + "Valor do produto: " + price + "\n" + "─────────────────────────────────────────────\n";
     }
+*/
+
 }

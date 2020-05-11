@@ -162,6 +162,8 @@ public class Main
                     System.out.println("│    A seguir, será exibido todos os itens    │");
                     System.out.println("│    que estão à venda.                       │");
                     System.out.println("└─────────────────────────────────────────────┘");
+
+                    System.out.println(list);
                     break;
                 case 5:
                     System.out.println("┌─────────────────────────────────────────────┐");
@@ -193,16 +195,27 @@ public class Main
 
                     if (option3 == 1)
                     {
-                        list.remove(index);
-                        list.add(new Item(name, code, price));
-                        break;
+                        if (index < list.size())
+                        {
+                            list.remove(index);
+                            list.add(new Item(name, code, price));
+                        }
+                        else
+                        {
+                            System.out.println("┌─────────────────────────────────────────────┐");
+                            System.out.println("│ ############# T H A Í S H O P ############# │");
+                            System.out.println("│                                             │");
+                            System.out.println("│  • Ajuste de todos os dados do item         │");
+                            System.out.println("│                                             │");
+                            System.out.println("│    Item inexistente.                        │");
+                            System.out.println("└─────────────────────────────────────────────┘");
+                        }
                     }
                     break;
                 case 0:
                     Main.main(null);
                     break;
                 default:
-                    mercado();
                     break;
             }
 

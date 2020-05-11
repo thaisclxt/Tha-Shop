@@ -13,7 +13,6 @@ public class Item
         this.price = price;
     }
 
-    @Override
     public String toString()
     {
         return "Nome do produto: " + name + "\n" + "Código do produto: " + code + "\n" + "Valor do produto: " + price + "\n" + "─────────────────────────────────────────────\n";

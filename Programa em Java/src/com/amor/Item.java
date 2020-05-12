@@ -5,6 +5,7 @@ public class Item
     private String name;
     private int code;
     private double price;
+    private Recipiente recipiente;
 
     public Item(String name, int code, double price)
     {
@@ -18,8 +19,8 @@ public class Item
     public int getCode() { return code; }
     public void setCode(int code) { this.code = code; }
     public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price;
-    }
+    public void setPrice(double price) { this.price = price; }
+    public void setRecipiente(Recipiente recipiente) { this.recipiente = recipiente; }
 
     public void imprimir()
     {

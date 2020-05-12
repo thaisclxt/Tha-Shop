@@ -5,12 +5,11 @@ public class Mercado
 {
     private static ArrayList<Item> listaItens = new ArrayList<>();
 
+    private Mercado() {}
+
     public static ArrayList<Item> getListaItens() { return listaItens; }
 
-    public static void add(Item item)
-    {
-        listaItens.add(item);
-    }
+    public static void add(Item item) { listaItens.add(item); }
 
     public static void listar()
     {
@@ -23,15 +22,10 @@ public class Mercado
 
     public static boolean remover(int code)
     {
-        for (Item item : listaItens)
-        {
-            if (item.getCode() == code)
-            {
-                listaItens.remove(item);
-                return true;
-            }
-        }
-        return false;
+        int quantidade = listaItens.size();
+        listaItens.removeIf(x -> x.getCode() == code);
+
+        return quantidade != listaItens.size();
     }
 
 

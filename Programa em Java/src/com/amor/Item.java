@@ -21,11 +21,12 @@ public class Item
     public void setPrice(double price) { this.price = price;
     }
 
-    public String imprimir()
+    public void imprimir()
     {
-        return "Nome do produto: " + name + "\nCódigo do produto: " + code +
-                String.format("\nValor do produto: R$ %.2f\n", price) +
-                "─────────────────────────────────────────────\n";
+        System.out.println("Nome do produto: " + name);
+        System.out.println("Código do produto: " + code);
+        System.out.printf("Valor do produto: R$ %.2f\n", price);
+        System.out.println("─────────────────────────────────────────────");
     }
 
     public static boolean ajustar(int index, String name, int code, double price)

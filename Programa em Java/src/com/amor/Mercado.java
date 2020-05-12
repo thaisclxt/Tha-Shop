@@ -12,17 +12,13 @@ public class Mercado
         listaItens.add(item);
     }
 
-    public static String listar()
+    public static void listar()
     {
-        String saida = "";
-
         for (Item item : listaItens)
         {
-            saida += "\n Item nº " + listaItens.indexOf(item) + ":\n";
-            saida += item.imprimir() + "\n";
+            System.out.println("\n  Item nº " + listaItens.indexOf(item) + ":\n");
+            item.imprimir();
         }
-
-        return saida;
     }
 
     public static boolean remover(int code)

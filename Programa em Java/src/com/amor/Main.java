@@ -188,7 +188,7 @@ public class Main
                     System.out.println("│    que estão à venda.                       │");
                     System.out.println("└─────────────────────────────────────────────┘");
 
-                    System.out.println(Mercado.listar());
+                    Mercado.listar();
 
                     break;
                 case 5:

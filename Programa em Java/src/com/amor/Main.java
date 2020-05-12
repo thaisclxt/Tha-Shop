@@ -25,7 +25,7 @@ public class Main
                 loginProprietario();
                 break;
             case 2:
-                //new Cliente();
+                new Cliente();
                 break;
             case 3:
                 //new Caixa();

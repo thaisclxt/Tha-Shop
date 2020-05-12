@@ -1,21 +1,18 @@
-/*package com.amor;
-
-import java.util.List;
-import java.util.ListIterator;
+package com.amor;
 
 public class Recipiente
 {
-    List<Recipiente> carrinhoGrande;
+    private int carrinhoGrande[][][] = new int[60][3][1];
+    private int carrinhoPequeno[][][] = new int[35][3][1];
+    private int cesta[][][] = new int[20][3][1];
 
-    private int [] = new int[60];
-    private int carrinhoPequeno[] = new int[35];
-    private int cesta[] = new int[20];
-    private int recipiente;
+    public Recipiente() { }
 
-    public Recipiente()
+    public static void adicionar(String name)
     {
-        if (recipiente == 1) { this.carrinhoGrande = ; }
-        if (recipiente == 2) { new Recipiente(); }
-        if (recipiente == 3) { new Recipiente(); }
+        if (Mercado.getListaItens().contains(name))
+        {
+
+        }
     }
-}*/
+}

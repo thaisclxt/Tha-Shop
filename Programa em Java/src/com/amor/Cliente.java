@@ -1,4 +1,4 @@
-/*package com.amor;
+package com.amor;
 import java.util.Scanner;
 
 public class Cliente
@@ -26,6 +26,7 @@ public class Cliente
             System.out.println("└─────────────────────────────────────────────┘");
 
             int option = read.nextInt();
+            int recipiente;
 
             switch (option)
             {
@@ -40,17 +41,36 @@ public class Cliente
                     System.out.println("│    3- Cesta (20 itens)                      │");
                     System.out.println("└─────────────────────────────────────────────┘");
 
-                    int recipiente = read.nextInt();
+                    recipiente = read.nextInt();
 
-                    if (recipiente == 1)
+                    System.out.println("┌─────────────────────────────────────────────┐");
+                    System.out.println("│ ############# T H A Í S H O P ############# │");
+                    System.out.println("│                                             │");
+                    System.out.println("│  • Colocar itens no recipiente              │");
+                    System.out.println("│                                             │");
+                    System.out.println("│    Informe quantos itens deseja adicionar   │");
+                    System.out.println("│    no recipiente.                           │");
+                    System.out.println("└─────────────────────────────────────────────┘");
+
+                    int quantidade = read.nextInt();
+
+                    System.out.println("┌─────────────────────────────────────────────┐");
+                    System.out.println("│ ############# T H A Í S H O P ############# │");
+                    System.out.println("│                                             │");
+                    System.out.println("│  • Colocar itens no recipiente              │");
+                    System.out.println("│                                             │");
+                    System.out.println("│    Informe o nome do item que deseja        │");
+                    System.out.println("│    adicionar no recipiente.                 │");
+                    System.out.println("└─────────────────────────────────────────────┘");
+
+                    for (int addItens = 0; addItens < quantidade; addItens++)
                     {
-                        Recipiente carrinhoGrande = new Recipiente();
+                        String name = read.nextLine();
+                        Recipiente.adicionar(name);
                     }
-                    if (recipiente == 2) { Recipiente carrinhoPequeno = new Recipiente(); }
-                    if (recipiente == 3) { Recipiente cesta = new Recipiente(); }
-
                     break;
                 case 2:
+
                     break;
                 case 3:
                     break;
@@ -73,4 +93,4 @@ public class Cliente
             if (option == 0) { break; }
         }
     }
-}*/
+}

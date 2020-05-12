@@ -1,4 +1,4 @@
-package com.amor;
+/*package com.amor;
 import java.util.Scanner;
 
 public class Cliente
@@ -73,4 +73,4 @@ public class Cliente
             if (option == 0) { break; }
         }
     }
-}
+}*/

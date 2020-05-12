@@ -1,4 +1,4 @@
-package com.amor;
+/*package com.amor;
 import java.util.Scanner;
 
 public class Caixa
@@ -7,7 +7,6 @@ public class Caixa
 
     public Caixa()
     {
-
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
@@ -82,4 +81,4 @@ public class Caixa
             if (option == 0) { break; }
         }
     }
-}
+}*/

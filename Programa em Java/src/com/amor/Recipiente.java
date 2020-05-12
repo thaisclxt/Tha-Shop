@@ -1,4 +1,4 @@
-package com.amor;
+/*package com.amor;
 
 import java.util.List;
 import java.util.ListIterator;
@@ -18,4 +18,4 @@ public class Recipiente
         if (recipiente == 2) { new Recipiente(); }
         if (recipiente == 3) { new Recipiente(); }
     }
-}
+}*/

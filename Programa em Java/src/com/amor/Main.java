@@ -1,5 +1,4 @@
 package com.amor;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main
@@ -18,18 +17,18 @@ public class Main
         System.out.println("│    0- Sair do programa                      │");
         System.out.println("└─────────────────────────────────────────────┘");
 
-        int option = read.nextInt();
+        int menu = read.nextInt();
 
-        switch (option)
+        switch (menu)
         {
             case 1:
                 loginProprietario();
                 break;
             case 2:
-                new Cliente();
+                //new Cliente();
                 break;
             case 3:
-                new Caixa();
+                //new Caixa();
                 break;
             case 0:
                 break;
@@ -93,22 +92,15 @@ public class Main
 
             int option = Main.read.nextInt();
 
-            ArrayList<Item> list = new ArrayList<>();
-
             switch (option)
             {
                 case 1:
-                    list.add(new Item("Vagem", 2566, 1.63));
-                    list.add(new Item("Shampoo", 3389, 11.90));
-                    list.add(new Item("Gergelim", 1001, 4.14));
-                    list.add(new Item("Óleo de coco", 1285, 18.85));
-                    list.add(new Item("Cola em bastão", 5411, 3.00));
-                    list.add(new Item("Semente de girassol", 1002, 3.75));
-
-                    for (Item products : list)
-                    {
-                        System.out.println(products);
-                    }
+                    Mercado.add(new Item("Vagem", 2566, 1.63));
+                    Mercado.add(new Item("Shampoo", 3389, 11.90));
+                    Mercado.add(new Item("Gergelim", 1001, 4.14));
+                    Mercado.add(new Item("Óleo de coco", 1285, 18.85));
+                    Mercado.add(new Item("Cola em bastão", 5411, 3.00));
+                    Mercado.add(new Item("Semente de girassol", 1002, 3.75));
                     break;
                 case 2:
                     System.out.println("┌─────────────────────────────────────────────┐");
@@ -137,7 +129,7 @@ public class Main
                         int code = read.nextInt();
                         double price = Double.parseDouble(read.next());
 
-                        list.add(new Item(name, code, price));
+                        Mercado.add(new Item(name, code, price));
                     }
                     break;
                 case 3:
@@ -150,10 +142,41 @@ public class Main
                     System.out.println("│    remover.                                 │");
                     System.out.println("└─────────────────────────────────────────────┘");
 
-                    String remove = read.next();
+                    int code = read.nextInt();
 
-                    list.remove(remove);
-
+                    if (! (Mercado.getListaItens().isEmpty()))
+                    {
+                        if (Mercado.remover(code))
+                        {
+                            System.out.println("┌─────────────────────────────────────────────┐");
+                            System.out.println("│ ############# T H A Í S H O P ############# │");
+                            System.out.println("│                                             │");
+                            System.out.println("│  • Remoção de itens à venda                 │");
+                            System.out.println("│                                             │");
+                            System.out.println("│    Item removido com sucesso.               │");
+                            System.out.println("└─────────────────────────────────────────────┘");
+                        }
+                        else
+                        {
+                            System.out.println("┌─────────────────────────────────────────────┐");
+                            System.out.println("│ ############# T H A Í S H O P ############# │");
+                            System.out.println("│                                             │");
+                            System.out.println("│  • Remoção de itens à venda                 │");
+                            System.out.println("│                                             │");
+                            System.out.println("│    Item não encontrado.                     │");
+                            System.out.println("└─────────────────────────────────────────────┘");
+                        }
+                    }
+                    else
+                    {
+                        System.out.println("┌─────────────────────────────────────────────┐");
+                        System.out.println("│ ############# T H A Í S H O P ############# │");
+                        System.out.println("│                                             │");
+                        System.out.println("│  • Remoção de itens à venda                 │");
+                        System.out.println("│                                             │");
+                        System.out.println("│    Não existem itens no mercado.            │");
+                        System.out.println("└─────────────────────────────────────────────┘");
+                    }
                     break;
                 case 4:
                     System.out.println("┌─────────────────────────────────────────────┐");
@@ -165,13 +188,7 @@ public class Main
                     System.out.println("│    que estão à venda.                       │");
                     System.out.println("└─────────────────────────────────────────────┘");
 
-                    for (Item products : list)
-                    {
-                        System.out.println("Nome do produto: " + products.getName());
-                        System.out.println("Código do produto: " + products.getCode());
-                        System.out.println("Valor do produto: " + products.getPrice());
-                        System.out.println("─────────────────────────────────────────────");
-                    }
+                    System.out.println(Mercado.listar());
 
                     break;
                 case 5:
@@ -187,27 +204,48 @@ public class Main
 
                     int index = read.nextInt();
 
-                    String name = read.next();
-                    int code = read.nextInt();
-                    double price = Double.parseDouble(read.next());
-
-                    System.out.println("┌─────────────────────────────────────────────┐");
-                    System.out.println("│ ############# T H A Í S H O P ############# │");
-                    System.out.println("│                                             │");
-                    System.out.println("│  • Ajuste de todos os dados do item         │");
-                    System.out.println("│                                             │");
-                    System.out.println("│    1- Concluir ajuste                       │");
-                    System.out.println("│    2- Cancelar ajuste                       │");
-                    System.out.println("└─────────────────────────────────────────────┘");
-
-                    int option3 = read.nextInt();
-
-                    if (option3 == 1)
+                    if (! (Mercado.getListaItens().isEmpty()))
                     {
-                        if (index < list.size())
+                        if (Mercado.getListaItens().get(index) != null)
                         {
-                            list.remove(index);
-                            list.add(new Item(name, code, price));
+                            String name = read.next();
+                            int codigo = read.nextInt();
+                            double price = Double.parseDouble(read.next());
+
+                            System.out.println("┌─────────────────────────────────────────────┐");
+                            System.out.println("│ ############# T H A Í S H O P ############# │");
+                            System.out.println("│                                             │");
+                            System.out.println("│  • Ajuste de todos os dados do item         │");
+                            System.out.println("│                                             │");
+                            System.out.println("│    1- Concluir ajuste                       │");
+                            System.out.println("│    2- Cancelar ajuste                       │");
+                            System.out.println("└─────────────────────────────────────────────┘");
+
+                            int option1 = read.nextInt();
+
+                            if (option1 == 1)
+                            {
+                                if (Item.ajustar(index, name, codigo, price))
+                                {
+                                    System.out.println("┌─────────────────────────────────────────────┐");
+                                    System.out.println("│ ############# T H A Í S H O P ############# │");
+                                    System.out.println("│                                             │");
+                                    System.out.println("│  • Ajuste de todos os dados do item         │");
+                                    System.out.println("│                                             │");
+                                    System.out.println("│    Item ajustado com sucesso.               │");
+                                    System.out.println("└─────────────────────────────────────────────┘");
+                                }
+                                else
+                                {
+                                    System.out.println("┌─────────────────────────────────────────────┐");
+                                    System.out.println("│ ############# T H A Í S H O P ############# │");
+                                    System.out.println("│                                             │");
+                                    System.out.println("│  • Ajuste de todos os dados do item         │");
+                                    System.out.println("│                                             │");
+                                    System.out.println("│    Item não encontrado.                     │");
+                                    System.out.println("└─────────────────────────────────────────────┘");
+                                }
+                            }
                         }
                         else
                         {
@@ -216,7 +254,7 @@ public class Main
                             System.out.println("│                                             │");
                             System.out.println("│  • Ajuste de todos os dados do item         │");
                             System.out.println("│                                             │");
-                            System.out.println("│    Item inexistente.                        │");
+                            System.out.println("│    Não existem itens no mercado.            │");
                             System.out.println("└─────────────────────────────────────────────┘");
                         }
                     }
@@ -227,6 +265,7 @@ public class Main
                 default:
                     break;
             }
+
             if (option == 0) { break; }
         }
     }

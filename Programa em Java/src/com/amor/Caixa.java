@@ -52,12 +52,12 @@ public class Caixa
             System.out.println("│                                             │");
             System.out.println("│  • Login como Caixa                         │");
             System.out.println("│                                             │");
-            System.out.println("│    1- Adição dos itens do cliente           │");
+            System.out.println("│    1- Exibição da compra do cliente         │");
+            System.out.println("│    2- Adição dos itens do cliente           │");
             if (! caixa.isEmpty())
             {
-                System.out.println("│    2- Exibição do total a ser pago          │");
-                System.out.println("│    3- Exibição da compra do cliente         │");
-                System.out.println("│    4- Remover item                          │");
+                System.out.println("│    3- Remoção dos itens do cliente          │");
+                System.out.println("│    4- Exibição do total a ser pago          │");
                 System.out.println("│    5- Concluir compra                       │");
                 System.out.println("│    6- Cancelar compra                       │");
             }
@@ -69,16 +69,16 @@ public class Caixa
             switch (option)
             {
                 case 1:
-                    add();
-                    break;
-                case 2:
-                    pay();
-                    break;
-                case 3:
                     Cliente.container.show();
                     break;
-                case 4:
+                case 2:
+                    add();
+                    break;
+                case 3:
                     remove();
+                    break;
+                case 4:
+                    pay();
                     break;
                 case 5:
                     break;
@@ -112,6 +112,7 @@ public class Caixa
         switch (add)
         {
             case 1:
+                caixa.addAll(Cliente.container.getRecipiente());
                 caixa = Cliente.container.getRecipiente();
                 System.out.println("┌─────────────────────────────────────────────┐");
                 System.out.println("│ ############# T H A Í S H O P ############# │");
@@ -170,29 +171,6 @@ public class Caixa
         System.out.println("└─────────────────────────────────────────────┘");
     }
 
-    public static void pay()
-    {
-        System.out.println("┌─────────────────────────────────────────────┐");
-        System.out.println("│ ############# T H A Í S H O P ############# │");
-        System.out.println("│                                             │");
-        System.out.println("│  • Prever custo total                       │");
-        System.out.println("│                                             │");
-        System.out.printf("│    R$ %.2f                                 │\n", total());
-        System.out.println("└─────────────────────────────────────────────┘");
-    }
-
-    public static double total()
-    {
-        double total = 0;
-
-        for (Item item : caixa)
-        {
-            total += item.getPrice();
-        }
-
-        return total;
-    }
-
     public static void remove()
     {
         System.out.println("┌─────────────────────────────────────────────┐");
@@ -225,6 +203,29 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│    Item não encontrado.                     │");
         System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static void pay()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Prever custo total                       │");
+        System.out.println("│                                             │");
+        System.out.printf("│    R$ %.2f                                 │\n", total());
+        System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static double total()
+    {
+        double total = 0;
+
+        for (Item item : caixa)
+        {
+            total += item.getPrice();
+        }
+
+        return total;
     }
 
     public static void cancel()

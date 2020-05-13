@@ -57,7 +57,7 @@ public class Cliente
                 case 171:
                     break;
                 case 0:
-                    Main.main(null);
+                    Main.main(null, 0);
                     break;
                 default:
                     break;

@@ -36,9 +36,9 @@ public class Caixa
             System.out.println("│    0- Voltar para o login como Cliente      │");
             System.out.println("└─────────────────────────────────────────────┘");
 
-            int option2 = Main.read.nextInt();
+            int option = Main.read.nextInt();
 
-            if (option2 == 0) { Main.main(null); }
+            if (option == 0) { return; }
             else { Cliente.login(); }
         }
     }
@@ -112,12 +112,11 @@ public class Caixa
         switch (add)
         {
             case 1:
-                caixa.addAll(Cliente.container.getRecipiente());
                 caixa = Cliente.container.getRecipiente();
                 System.out.println("┌─────────────────────────────────────────────┐");
                 System.out.println("│ ############# T H A Í S H O P ############# │");
                 System.out.println("│                                             │");
-                System.out.println("│  • Adição de itens individualmente          │");
+                System.out.println("│  • Adição de todos os itens do cliente      │");
                 System.out.println("│                                             │");
                 System.out.println("│    Itens adicionados com sucesso.           │");
                 System.out.println("└─────────────────────────────────────────────┘");
@@ -172,6 +171,43 @@ public class Caixa
     }
 
     public static void remove()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Remoção dos itens do cliente             │");
+        System.out.println("│                                             │");
+        System.out.println("│    1- Remover todos os itens                │");
+        System.out.println("│    2- Remover itens individualmente         │");
+        System.out.println("│    0- Voltar para o login como Caixa        │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int remove = Main.read.nextInt();
+
+        switch (remove)
+        {
+            case 1:
+                caixa.clear();
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Remoção de todos os itens do cliente     │");
+                System.out.println("│                                             │");
+                System.out.println("│    Itens removidos com sucesso.             │");
+                System.out.println("└─────────────────────────────────────────────┘");
+                break;
+            case 2:
+                removeSingly();
+                break;
+            case 0:
+                return;
+            default:
+                remove();
+                break;
+        }
+    }
+
+    public static void removeSingly()
     {
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
@@ -255,5 +291,15 @@ public class Caixa
         }
 
         caixa.clear();
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Cancelar compra                          │");
+        System.out.println("│                                             │");
+        System.out.println("│    Compra cancelada com sucesso.            │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        Main.main(null, 1);
     }
 }

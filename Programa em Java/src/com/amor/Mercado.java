@@ -27,6 +27,4 @@ public class Mercado
 
         return quantidade != listaItens.size();
     }
-
-
 }

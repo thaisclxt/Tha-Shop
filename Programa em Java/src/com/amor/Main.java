@@ -5,8 +5,10 @@ public class Main
 {
     public static Scanner read = new Scanner(System.in);
     public static Scanner readString = new Scanner(System.in);
-    public static void main(String[] args)
+    public static void main(String[] args, int close)
     {
+        if (close == 1) { return; }
+
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
@@ -29,9 +31,9 @@ public class Main
                 Cliente.login();
                 break;
             case 0:
-                break;
+                return;
             default:
-                main(args);
+                main(args, 0);
         }
     }
 }

@@ -34,7 +34,7 @@ public class Proprietario
 
             int option2 = Main.read.nextInt();
 
-            if (option2 == 0) { Main.main(null); }
+            if (option2 == 0) { Main.main(null, 0); }
             else { login(); }
         }
     }
@@ -79,7 +79,7 @@ public class Proprietario
                     ajustar();
                     break;
                 case 0:
-                    Main.main(null);
+                    Main.main(null, 0);
                     break;
                 default:
                     break;

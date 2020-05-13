@@ -2,13 +2,13 @@ package com.amor;
 
 public class Cliente
 {
-    private static Recipiente container;
+    public static Recipiente container;
 
     private Cliente() {}
 
     public static void login()
     {
-        escolher();
+        if (container.getRecipiente().isEmpty()) { escolher(); }
 
         while (true)
         {
@@ -48,6 +48,7 @@ public class Cliente
                     change();
                     break;
                 case 5:
+                    preview();
                     break;
                 case 6:
                     break;
@@ -169,7 +170,7 @@ public class Cliente
         System.out.println("│                                             │");
         System.out.println("│  • Trocar recipiente                        │");
         System.out.println("│                                             │");
-        System.out.printf("│    Seu recipiente atual armazena %d itens.  ", container.getSize());
+        System.out.printf("│    Seu recipiente atual armazena %d itens. │\n", container.getSize());
         System.out.println("│                                             │");
         if (container.getSize() != 60)
         System.out.println("│    1- Carrinho grande (60 itens)            │");
@@ -189,5 +190,15 @@ public class Cliente
         }
 
         container.setSize(change);
+    }
+    public static void preview()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Prever custo total                       │");
+        System.out.println("│                                             │");
+        //System.out.printf("│    R$ %.2f                                 │\n", );
+        System.out.println("└─────────────────────────────────────────────┘");
     }
 }

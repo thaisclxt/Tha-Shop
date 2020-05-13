@@ -224,7 +224,7 @@ public class Proprietario
 
         if (Mercado.getListaItens().get(index) != null)
         {
-            String name = Main.readString.next();
+            String name = Main.readString.nextLine();
             int codigo = Main.read.nextInt();
             double price = Double.parseDouble(Main.read.next());
 

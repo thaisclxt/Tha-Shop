@@ -28,7 +28,6 @@ public class Cliente
             System.out.println("│    5- Prever custo total                    │");
             System.out.println("│    6- Cancelar compra                       │");
             System.out.println("│    7- Confirmar compra                      │");
-            System.out.println("│    8- Opção secreta: Roubar                 │");
             System.out.println("│    0- Voltar para o Menu Inicial            │");
             System.out.println("└─────────────────────────────────────────────┘");
 
@@ -40,11 +39,12 @@ public class Cliente
                     add();
                     break;
                 case 2:
-
                     break;
                 case 3:
+                    container.show();
                     break;
                 case 4:
+                    change();
                     break;
                 case 5:
                     break;
@@ -52,7 +52,7 @@ public class Cliente
                     break;
                 case 7:
                     break;
-                case 8:
+                case 171:
                     break;
                 case 0:
                     Main.main(null);
@@ -125,5 +125,34 @@ public class Cliente
             System.out.println("│    Item adicionado com sucesso.             │");
             System.out.println("└─────────────────────────────────────────────┘");
         }
+    }
+
+    public static void change()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Trocar recipiente                        │");
+        System.out.println("│                                             │");
+        System.out.printf("│    Seu recipiente atual armazena %d itens.  ", container.getSize());
+        System.out.println("│                                             │");
+        if (container.getSize() != 60)
+        System.out.println("│    1- Carrinho grande (60 itens)            │");
+        if (container.getSize() != 35)
+        System.out.println("│    2- Carrinho pequeno (35 itens)           │");
+        if (container.getSize() != 20)
+        System.out.println("│    3- Cesta (20 itens)                      │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int change = Main.read.nextInt();
+
+        switch (change)
+        {
+            case 1: change = 25; break;
+            case 2: change = 15; break;
+            case 3: change = 20; break;
+        }
+
+        container.setSize(change);
     }
 }

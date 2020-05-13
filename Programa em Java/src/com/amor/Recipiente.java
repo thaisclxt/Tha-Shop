@@ -24,6 +24,7 @@ public class Recipiente
 
     public ArrayList<Item> getRecipiente() { return recipiente; }
     public int getSize() { return size; }
+    public void setSize(int size) { this.size = size; }
 
     public boolean add(int code)
     {
@@ -40,5 +41,14 @@ public class Recipiente
             }
         }
         return false;
+    }
+
+    public void show()
+    {
+        for (Item item : recipiente)
+        {
+            System.out.println("\n  Item nº " + recipiente.indexOf(item) + ":\n");
+            item.imprimir();
+        }
     }
 }

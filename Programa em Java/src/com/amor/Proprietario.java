@@ -91,12 +91,19 @@ public class Proprietario
 
     private static void carregar()
     {
-        Mercado.add(new Item("Vagem", 2566, 1.63));
-        Mercado.add(new Item("Shampoo", 3389, 11.90));
-        Mercado.add(new Item("Gergelim", 1001, 4.14));
-        Mercado.add(new Item("Óleo de coco", 1285, 18.85));
-        Mercado.add(new Item("Cola em bastão", 5411, 3.00));
-        Mercado.add(new Item("Semente de girassol", 1002, 3.75));
+        Mercado.add(new Item("Absorvente", 0, 5.25));
+        Mercado.add(new Item("Algodão", 1, 3.50));
+        Mercado.add(new Item("KitKat", 2, 4.00));
+        Mercado.add(new Item("Shampoo", 3, 11.90));
+        Mercado.add(new Item("Condicionador", 4, 9.90));
+        Mercado.add(new Item("Óleo de coco", 5, 20.00));
+        Mercado.add(new Item("Esmalte", 6, 4.15));
+        Mercado.add(new Item("Semente de girassol", 7, 3.75));
+        Mercado.add(new Item("Pão francês", 8, 6.58));
+        Mercado.add(new Item("Muzzarela", 9, 3.46));
+        Mercado.add(new Item("Maçã", 10, 7.45));
+        Mercado.add(new Item("Melão", 11, 9.27));
+        Mercado.add(new Item("Cebola roxa", 12, 3.95));
     }
 
     private static void adicionar()

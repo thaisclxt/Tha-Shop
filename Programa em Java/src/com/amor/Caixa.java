@@ -81,6 +81,7 @@ public class Caixa
                     pay();
                     break;
                 case 5:
+                    conclue();
                     break;
                 case 6:
                     cancel();
@@ -262,6 +263,33 @@ public class Caixa
         }
 
         return total;
+    }
+
+    public static void conclue()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Concluir compra                          │");
+        System.out.println("│                                             │");
+        System.out.printf("│     Custo total: R$ %.2f                      │\n", total());
+        System.out.println("│                                             │");
+        System.out.println("│    1- Receber a quantia paga pelo cliente   │");
+        System.out.println("│    2- Voltar para o login como Caixa        │");
+        System.out.println("│    0- Cancelar compra                       │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int conclue = Main.read.nextInt();
+
+        switch (conclue)
+        {
+            case 1: 
+                break;
+            case 2:
+                return;
+            case 3:
+                cancel();
+        }
     }
 
     public static void cancel()

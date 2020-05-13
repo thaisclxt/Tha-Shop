@@ -198,7 +198,7 @@ public class Cliente
         System.out.println("│                                             │");
         System.out.println("│  • Prever custo total                       │");
         System.out.println("│                                             │");
-        //System.out.printf("│    R$ %.2f                                 │\n", );
+        System.out.printf("│    R$ %.2f                                 │\n", Caixa.total());
         System.out.println("└─────────────────────────────────────────────┘");
     }
 }

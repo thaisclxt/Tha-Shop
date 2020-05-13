@@ -1,10 +1,8 @@
 package com.amor;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Caixa
 {
-    public static Scanner read = new Scanner(System.in);
     private static ArrayList<Item> caixa = new ArrayList<>();
 
     private Caixa() {}
@@ -19,7 +17,7 @@ public class Caixa
         System.out.println("│    Informe a senha: ********                │");
         System.out.println("└─────────────────────────────────────────────┘");
 
-        int password = read.nextInt();
+        int password = Main.read.nextInt();
 
         if (password == 68130947)
         {
@@ -38,7 +36,7 @@ public class Caixa
             System.out.println("│    0- Voltar para o login como Cliente      │");
             System.out.println("└─────────────────────────────────────────────┘");
 
-            int option2 = read.nextInt();
+            int option2 = Main.read.nextInt();
 
             if (option2 == 0) { Main.main(null); }
             else { Cliente.login(); }
@@ -54,34 +52,38 @@ public class Caixa
             System.out.println("│                                             │");
             System.out.println("│  • Login como Caixa                         │");
             System.out.println("│                                             │");
-            if (! caixa.isEmpty())
-            System.out.println("│    1- Exibir itens do recipiente            │");
-            System.out.println("│    2- Adicionar itens                       │");
+            System.out.println("│    1- Adição dos itens do cliente           │");
             if (! caixa.isEmpty())
             {
-                System.out.println("│    3- Remover item                          │");
-                System.out.println("│    4- Concluir compra                       │");
-                System.out.println("│    5- Cancelar compra                       │");
+                System.out.println("│    2- Exibição do total a ser pago          │");
+                System.out.println("│    3- Exibição da compra do cliente         │");
+                System.out.println("│    4- Remover item                          │");
+                System.out.println("│    5- Concluir compra                       │");
+                System.out.println("│    6- Cancelar compra                       │");
             }
             System.out.println("│    0- Voltar para o login como Cliente      │");
             System.out.println("└─────────────────────────────────────────────┘");
 
-            int option = read.nextInt();
+            int option = Main.read.nextInt();
 
             switch (option)
             {
                 case 1:
-                    Cliente.container.show();
+                    add();
                     break;
                 case 2:
-                    caixa = Cliente.container.getRecipiente();
+                    pay();
                     break;
                 case 3:
-                    remove();
+                    Cliente.container.show();
                     break;
                 case 4:
+                    remove();
                     break;
                 case 5:
+                    break;
+                case 6:
+                    cancel();
                     break;
                 case 0:
                     Cliente.login();
@@ -91,6 +93,104 @@ public class Caixa
             }
             if (option == 0) { break; }
         }
+    }
+
+    public static void add()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Adição dos itens do cliente              │");
+        System.out.println("│                                             │");
+        System.out.println("│    1- Adicionar todos os itens              │");
+        System.out.println("│    2- Adicionar itens individualmente       │");
+        System.out.println("│    0- Voltar para o login como Caixa        │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int add = Main.read.nextInt();
+
+        switch (add)
+        {
+            case 1:
+                caixa = Cliente.container.getRecipiente();
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Adição de itens individualmente          │");
+                System.out.println("│                                             │");
+                System.out.println("│    Itens adicionados com sucesso.           │");
+                System.out.println("└─────────────────────────────────────────────┘");
+                break;
+            case 2:
+                addSingly();
+                break;
+            case 0:
+                return;
+            default:
+                add();
+                break;
+        }
+    }
+
+    public static void addSingly()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Adição de itens individualmente          │");
+        System.out.println("│                                             │");
+        System.out.println("│    Informe o código do produto que deseja   │");
+        System.out.println("│    adicionar.                               │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int code = Main.read.nextInt();
+
+        caixa.forEach(item ->
+        {
+            if (item.getCode() == code)
+            {
+                caixa.add(item);
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Adição de itens individualmente          │");
+                System.out.println("│                                             │");
+                System.out.println("│    Item adicionado com sucesso.             │");
+                System.out.println("└─────────────────────────────────────────────┘");
+                return;
+            }
+        });
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Adição de itens individualmente          │");
+        System.out.println("│                                             │");
+        System.out.println("│    Item não encontrado.                     │");
+        System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static void pay()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Prever custo total                       │");
+        System.out.println("│                                             │");
+        System.out.printf("│    R$ %.2f                                 │\n", total());
+        System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static double total()
+    {
+        double total = 0;
+
+        for (Item item : caixa)
+        {
+            total += item.getPrice();
+        }
+
+        return total;
     }
 
     public static void remove()
@@ -125,5 +225,34 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│    Item não encontrado.                     │");
         System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static void cancel()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Cancelar compra                          │");
+        System.out.println("│                                             │");
+        System.out.println("│    Tem certeza que deseja cancelar ?        │");
+        System.out.println("│    1- Sim                                   │");
+        System.out.println("│    0- Não                                   │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int areYouSure = Main.read.nextInt();
+
+        if (areYouSure != 1)
+        {
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Cancelar compra                          │");
+            System.out.println("│                                             │");
+            System.out.println("│    Sua compra não foi cancelada.            │");
+            System.out.println("└─────────────────────────────────────────────┘");
+            return;
+        }
+
+        caixa.clear();
     }
 }

@@ -59,7 +59,7 @@ public class Caixa
             System.out.println("│    2- Adicionar itens                       │");
             if (! caixa.isEmpty())
             {
-                System.out.println("│    3- Remover itens                         │");
+                System.out.println("│    3- Remover item                          │");
                 System.out.println("│    4- Concluir compra                       │");
                 System.out.println("│    5- Cancelar compra                       │");
             }
@@ -77,6 +77,7 @@ public class Caixa
                     caixa = Cliente.container.getRecipiente();
                     break;
                 case 3:
+                    remove();
                     break;
                 case 4:
                     break;
@@ -90,5 +91,39 @@ public class Caixa
             }
             if (option == 0) { break; }
         }
+    }
+
+    public static void remove()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Remover item                             │");
+        System.out.println("│                                             │");
+        System.out.println("│    Informe o código do produto que deseja   │");
+        System.out.println("│    remover.                                 │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int code = Main.read.nextInt();
+
+        if (caixa.removeIf(x -> x.getCode() == code))
+        {
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Remover item                             │");
+            System.out.println("│                                             │");
+            System.out.println("│    Item removido com sucesso.               │");
+            System.out.println("└─────────────────────────────────────────────┘");
+            return;
+        }
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Remover item                             │");
+        System.out.println("│                                             │");
+        System.out.println("│    Item não encontrado.                     │");
+        System.out.println("└─────────────────────────────────────────────┘");
     }
 }

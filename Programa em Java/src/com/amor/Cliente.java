@@ -53,6 +53,7 @@ public class Cliente
                 case 6:
                     break;
                 case 7:
+                    Caixa.login();
                     break;
                 case 171:
                     break;

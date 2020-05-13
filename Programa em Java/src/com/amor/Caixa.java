@@ -283,13 +283,19 @@ public class Caixa
 
         switch (conclue)
         {
-            case 1: 
+            case 1:
+                receive();
                 break;
             case 2:
                 return;
             case 3:
                 cancel();
         }
+    }
+
+    public static void receive()
+    {
+
     }
 
     public static void cancel()

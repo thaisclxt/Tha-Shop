@@ -1,9 +1,11 @@
 package com.amor;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Caixa
 {
     public static Scanner read = new Scanner(System.in);
+    private static ArrayList<Item> caixa = new ArrayList<>();
 
     private Caixa() {}
 
@@ -52,12 +54,16 @@ public class Caixa
             System.out.println("│                                             │");
             System.out.println("│  • Login como Caixa                         │");
             System.out.println("│                                             │");
+            if (! caixa.isEmpty())
             System.out.println("│    1- Exibir itens do recipiente            │");
             System.out.println("│    2- Adicionar itens                       │");
-            System.out.println("│    3- Remover itens                         │");
-            System.out.println("│    4- Concluir compra                       │");
-            System.out.println("│    5- Cancelar compra                       │");
-            System.out.println("│    0- Voltar para o Menu Inicial            │");
+            if (! caixa.isEmpty())
+            {
+                System.out.println("│    3- Remover itens                         │");
+                System.out.println("│    4- Concluir compra                       │");
+                System.out.println("│    5- Cancelar compra                       │");
+            }
+            System.out.println("│    0- Voltar para o login como Cliente      │");
             System.out.println("└─────────────────────────────────────────────┘");
 
             int option = read.nextInt();
@@ -68,6 +74,7 @@ public class Caixa
                     Cliente.container.show();
                     break;
                 case 2:
+                    caixa = Cliente.container.getRecipiente();
                     break;
                 case 3:
                     break;
@@ -76,7 +83,7 @@ public class Caixa
                 case 5:
                     break;
                 case 0:
-                    Main.main(null);
+                    Cliente.login();
                     break;
                 default:
                     break;

@@ -39,6 +39,7 @@ public class Cliente
                     add();
                     break;
                 case 2:
+                    remove();
                     break;
                 case 3:
                     container.show();
@@ -125,6 +126,40 @@ public class Cliente
             System.out.println("│    Item adicionado com sucesso.             │");
             System.out.println("└─────────────────────────────────────────────┘");
         }
+    }
+
+    private static void remove()
+    {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Remover item do recipiente               │");
+        System.out.println("│                                             │");
+        System.out.println("│    Informe o código do produto que deseja   │");
+        System.out.println("│    remover.                                 │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int code = Main.read.nextInt();
+
+        if (container.getRecipiente().removeIf(x -> x.getCode() == code))
+        {
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Remover item do recipiente               │");
+            System.out.println("│                                             │");
+            System.out.println("│    Item removido com sucesso.               │");
+            System.out.println("└─────────────────────────────────────────────┘");
+            return;
+        }
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Remover item do recipiente               │");
+        System.out.println("│                                             │");
+        System.out.println("│    Item não encontrado.                     │");
+        System.out.println("└─────────────────────────────────────────────┘");
     }
 
     public static void change()

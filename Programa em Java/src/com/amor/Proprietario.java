@@ -123,7 +123,7 @@ public class Proprietario
 
         for (int add = 0; add < quantidade; add++)
         {
-            String name = Main.read.nextLine();
+            String name = Main.readString.nextLine();
             int code = Main.read.nextInt();
             double price = Double.parseDouble(Main.read.next());
 
@@ -217,7 +217,7 @@ public class Proprietario
 
         if (Mercado.getListaItens().get(index) != null)
         {
-            String name = Main.read.next();
+            String name = Main.readString.next();
             int codigo = Main.read.nextInt();
             double price = Double.parseDouble(Main.read.next());
 

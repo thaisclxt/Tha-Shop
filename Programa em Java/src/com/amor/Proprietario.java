@@ -32,11 +32,12 @@ public class Proprietario
             System.out.println("│    0- Voltar para o Menu Inicial            │");
             System.out.println("└─────────────────────────────────────────────┘");
 
-            int option2 = Main.read.nextInt();
+            int option = Main.read.nextInt();
 
-            if (option2 == 0) { Main.main(null); }
+            if (option == 0) { return; }
             else { login(); }
         }
+        return;
     }
 
     public static void mercado()
@@ -63,29 +64,14 @@ public class Proprietario
 
             switch (option)
             {
-                case 1:
-                    carregar();
-                    break;
-                case 2:
-                    adicionar();
-                    break;
-                case 3:
-                    remover();
-                    break;
-                case 4:
-                    exibir();
-                    break;
-                case 5:
-                    ajustar();
-                    break;
-                case 0:
-                    Main.main(null);
-                    break;
-                default:
-                    break;
+                case 1: carregar(); break;
+                case 2: adicionar(); break;
+                case 3: remover(); break;
+                case 4: exibir(); break;
+                case 5: ajustar(); break;
+                case 0: return;
+                default: break;
             }
-
-            if (option == 0) { break; }
         }
     }
 

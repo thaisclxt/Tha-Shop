@@ -4,9 +4,7 @@ import java.util.ArrayList;
 public class Caixa
 {
     private static ArrayList<Item> caixa = new ArrayList<>();
-
     private Caixa() {}
-
     public static void login()
     {
         System.out.println("┌─────────────────────────────────────────────┐");
@@ -39,8 +37,9 @@ public class Caixa
             int option = Main.read.nextInt();
 
             if (option == 0) { return; }
-            else { Cliente.login(); }
+            else { login(); }
         }
+        return;
     }
 
     public static void caixa()
@@ -52,16 +51,16 @@ public class Caixa
             System.out.println("│                                             │");
             System.out.println("│  • Tela para o caixa                        │");
             System.out.println("│                                             │");
-            System.out.println("│    1- Exibição da compra do cliente         │");
-            System.out.println("│    2- Adição dos itens do cliente           │");
+            System.out.println("│    1- Exibir a lista de compras do cliente  │");
+            System.out.println("│    2- Adicionar os itens do cliente         │");
             if (! caixa.isEmpty())
             {
-                System.out.println("│    3- Remoção dos itens do cliente          │");
-                System.out.println("│    4- Exibição do total a ser pago          │");
+                System.out.println("│    3- Remover os itens do cliente           │");
+                System.out.println("│    4- Exibir o total a ser pago             │");
                 System.out.println("│    5- Concluir compra                       │");
                 System.out.println("│    6- Cancelar compra                       │");
             }
-            System.out.println("│    0- Voltar para o login como Cliente      │");
+            System.out.println("│    0- Voltar                                │");
             System.out.println("└─────────────────────────────────────────────┘");
 
             int option = Main.read.nextInt();
@@ -73,11 +72,10 @@ public class Caixa
                 case 3: remove(); break;
                 case 4: pay(); break;
                 case 5: conclue(); break;
-                case 6: cancel(); break;
-                case 0: Cliente.login(); break;
+                case 6: if (cancel() == 0) { return; } break;
+                case 0: return;
                 default: break;
             }
-            if (option == 0) { break; }
         }
     }
 
@@ -90,7 +88,7 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│    1- Adicionar todos os itens              │");
         System.out.println("│    2- Adicionar itens individualmente       │");
-        System.out.println("│    0- Voltar para o login como Caixa        │");
+        System.out.println("│    0- Voltar                                │");
         System.out.println("└─────────────────────────────────────────────┘");
 
         int add = Main.read.nextInt();
@@ -131,7 +129,7 @@ public class Caixa
 
         int code = Main.read.nextInt();
 
-        caixa.forEach(item ->
+        Cliente.container.getRecipiente().forEach(item ->
         {
             if (item.getCode() == code)
             {
@@ -165,7 +163,7 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│    1- Remover todos os itens                │");
         System.out.println("│    2- Remover itens individualmente         │");
-        System.out.println("│    0- Voltar para o login como Caixa        │");
+        System.out.println("│    0- Voltar                                │");
         System.out.println("└─────────────────────────────────────────────┘");
 
         int remove = Main.read.nextInt();
@@ -232,7 +230,7 @@ public class Caixa
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
-        System.out.println("│  • Prever custo total                       │");
+        System.out.println("│  • Total a ser pago                         │");
         System.out.println("│                                             │");
         System.out.printf("│    R$ %.2f                                 │\n", total());
         System.out.println("└─────────────────────────────────────────────┘");
@@ -257,7 +255,7 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│  • Concluir compra                          │");
         System.out.println("│                                             │");
-        System.out.printf("│     Custo total: R$ %.2f                      │\n", total());
+        System.out.printf("│    Custo total: R$ %.2f                     │\n", total());
         System.out.println("│                                             │");
         System.out.println("│    1- Receber a quantia paga pelo cliente   │");
         System.out.println("│    2- Voltar para o login como Caixa        │");
@@ -283,7 +281,7 @@ public class Caixa
 
     }
 
-    public static void cancel()
+    public static int cancel()
     {
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
@@ -306,10 +304,11 @@ public class Caixa
             System.out.println("│                                             │");
             System.out.println("│    Sua compra não foi cancelada.            │");
             System.out.println("└─────────────────────────────────────────────┘");
-            return;
+            return 1;
         }
 
         caixa.clear();
+        Cliente.container.getRecipiente().clear();
 
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
@@ -318,5 +317,6 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│    Compra cancelada com sucesso.            │");
         System.out.println("└─────────────────────────────────────────────┘");
+        return 0;
     }
 }

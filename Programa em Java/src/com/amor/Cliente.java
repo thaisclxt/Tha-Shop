@@ -3,12 +3,10 @@ package com.amor;
 public class Cliente
 {
     public static Recipiente container;
-
     private Cliente() {}
-
     public static void login()
     {
-        if (container.getRecipiente().isEmpty()) { escolher(); }
+        if (escolher() == 0) { return; }
 
         while (true)
         {
@@ -17,15 +15,12 @@ public class Cliente
             System.out.println("│                                             │");
             System.out.println("│  • Tela para o cliente                      │");
             System.out.println("│                                             │");
-            System.out.println("│    1- Colocar itens no recipiente           │");
+            System.out.println("│    1- Trocar recipiente                     │");
+            System.out.println("│    2- Adicionar itens no recipiente         │");
             if (! container.getRecipiente().isEmpty())
             {
-                System.out.println("│    2- Remover itens                         │");
-                System.out.println("│    3- Ver todos os itens atuais             │");
-            }
-            System.out.println("│    4- Trocar recipiente                     │");
-            if (! container.getRecipiente().isEmpty())
-            {
+                System.out.println("│    3- Remover itens                         │");
+                System.out.println("│    4- Ver todos os itens atuais             │");
                 System.out.println("│    5- Prever custo total                    │");
                 System.out.println("│    6- Cancelar compra                       │");
                 System.out.println("│    7- Confirmar compra                      │");
@@ -37,36 +32,47 @@ public class Cliente
 
             switch (option)
             {
-                case 1: add(); break;
-                case 2: remove(); break;
-                case 3: container.show(); break;
-                case 4: change(); break;
+                case 1: change(); break;
+                case 2: add(); break;
+                case 3: remove(); break;
+                case 4: container.show(); break;
                 case 5: preview(); break;
-                case 6: Caixa.cancel(); break;
+                case 6: if (Caixa.cancel() == 0); return;
                 case 7: Caixa.login(); break;
                 case 171: steal(); break;
-                case 0: Main.main(null); break;
+                case 0: return;
                 default: break;
             }
-            if (option == 0) { break; }
         }
     }
 
-    public static void escolher()
+    public static int escolher()
     {
-        System.out.println("┌─────────────────────────────────────────────┐");
-        System.out.println("│ ############# T H A Í S H O P ############# │");
-        System.out.println("│                                             │");
-        System.out.println("│  • Tela para o cliente                      │");
-        System.out.println("│                                             │");
-        System.out.println("│    Escolha um recipiente.                   │");
-        System.out.println("│                                             │");
-        System.out.println("│    1- Carrinho grande (60 itens)            │");
-        System.out.println("│    2- Carrinho pequeno (35 itens)           │");
-        System.out.println("│    3- Cesta (20 itens)                      │");
-        System.out.println("└─────────────────────────────────────────────┘");
+        int option;
+        do
+        {
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Tela para o cliente                      │");
+            System.out.println("│                                             │");
+            System.out.println("│    Escolha um recipiente.                   │");
+            System.out.println("│                                             │");
+            System.out.println("│    1- Carrinho grande (60 itens)            │");
+            System.out.println("│    2- Carrinho pequeno (35 itens)           │");
+            System.out.println("│    3- Cesta (20 itens)                      │");
+            System.out.println("│    0- Voltar                                │");
+            System.out.println("└─────────────────────────────────────────────┘");
 
-        container = new Recipiente(Main.read.nextInt());
+            option = Main.read.nextInt();
+
+            if (option == 0) { return 0; }
+
+        } while (option < 0 | 3 < option);
+
+        container = new Recipiente(option);
+
+        return 1;
     }
 
     public static void add()
@@ -179,12 +185,13 @@ public class Cliente
     }
     public static void preview()
     {
+        double total = container.getRecipiente().stream().mapToDouble(Item::getPrice).sum();
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
         System.out.println("│  • Prever custo total                       │");
         System.out.println("│                                             │");
-        System.out.printf("│    R$ %.2f                                 │\n", Caixa.total());
+        System.out.printf("│    R$ %.2f                                 │\n", total);
         System.out.println("└─────────────────────────────────────────────┘");
     }
 

@@ -129,7 +129,7 @@ public class Caixa
 
         int code = Main.read.nextInt();
 
-        Cliente.container.getRecipiente().forEach(item ->
+        for (Item item : Cliente.container.getRecipiente())
         {
             if (item.getCode() == code)
             {
@@ -143,8 +143,7 @@ public class Caixa
                 System.out.println("└─────────────────────────────────────────────┘");
                 return;
             }
-        });
-
+        }
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
@@ -255,24 +254,19 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│  • Concluir compra                          │");
         System.out.println("│                                             │");
-        System.out.printf("│    Custo total: R$ %.2f                     │\n", total());
+        System.out.printf("│    Custo total: R$ %.2f                    │\n", total());
         System.out.println("│                                             │");
         System.out.println("│    1- Receber a quantia paga pelo cliente   │");
-        System.out.println("│    2- Voltar para o login como Caixa        │");
-        System.out.println("│    0- Cancelar compra                       │");
+        System.out.println("│    0- Voltar                                │");
         System.out.println("└─────────────────────────────────────────────┘");
 
         int conclue = Main.read.nextInt();
 
         switch (conclue)
         {
-            case 1:
-                receive();
-                break;
-            case 2:
-                return;
-            case 3:
-                cancel();
+            case 1: receive(); break;
+            case 0: return;
+            default: conclue(); break;
         }
     }
 

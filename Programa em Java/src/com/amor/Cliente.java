@@ -25,7 +25,7 @@ public class Cliente
                 System.out.println("│    6- Cancelar compra                       │");
                 System.out.println("│    7- Confirmar compra                      │");
             }
-            System.out.println("│    0- Voltar para o Menu Inicial            │");
+            System.out.println("│    0- Voltar                                │");
             System.out.println("└─────────────────────────────────────────────┘");
 
             int option = Main.read.nextInt();

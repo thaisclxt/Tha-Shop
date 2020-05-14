@@ -1,4 +1,5 @@
 package com.amor;
+import java.util.Random;
 
 public class Cliente
 {
@@ -224,16 +225,27 @@ public class Cliente
             return;
         }
 
-        double chance = 1 / Math.pow(2, container.getSize());
-        double limInferior = -0.02804;
-        double limSuperior = 0.5;
+        Random x = new Random();
+        int chance = x.nextInt((int) Math.pow(2, container.getRecipiente().size())) + 1;
+
+        if (chance == 1)
+        {
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Opção secreta: Roubar                    │");
+            System.out.println("│                                             │");
+            System.out.println("│    Furto realizado com sucesso. :(          │");
+            System.out.println("└─────────────────────────────────────────────┘");
+            return;
+        }
 
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
         System.out.println("│  • Opção secreta: Roubar                    │");
         System.out.println("│                                             │");
-        System.out.println("│    Furto realizado com sucesso. :(          │");
+        System.out.println("│    Furto realizado com fracasso.            │");
         System.out.println("└─────────────────────────────────────────────┘");
     }
 }

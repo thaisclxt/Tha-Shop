@@ -208,34 +208,42 @@ public class Proprietario
 
         int index = Main.read.nextInt();
 
-        if (Mercado.getListaItens().get(index) != null)
+        if (Mercado.getListaItens().size() <= index)
         {
-            String name = Main.readString.nextLine();
-            int codigo = Main.read.nextInt();
-            double price = Double.parseDouble(Main.read.next());
-
             System.out.println("┌─────────────────────────────────────────────┐");
             System.out.println("│ ############# T H A Í S H O P ############# │");
             System.out.println("│                                             │");
             System.out.println("│  • Ajuste de todos os dados do item         │");
             System.out.println("│                                             │");
-            System.out.println("│    1- Concluir ajuste                       │");
-            System.out.println("│    2- Cancelar ajuste                       │");
+            System.out.println("│    Item não encontrado.                     │");
             System.out.println("└─────────────────────────────────────────────┘");
+            return;
+        }
 
-            int option = Main.read.nextInt();
+        String name = Main.readString.nextLine();
+        int codigo = Main.read.nextInt();
+        double price = Double.parseDouble(Main.read.next());
 
-            if (option == 1 & Item.ajustar(index, name, codigo, price))
-            {
-                System.out.println("┌─────────────────────────────────────────────┐");
-                System.out.println("│ ############# T H A Í S H O P ############# │");
-                System.out.println("│                                             │");
-                System.out.println("│  • Ajuste de todos os dados do item         │");
-                System.out.println("│                                             │");
-                System.out.println("│    Item ajustado com sucesso.               │");
-                System.out.println("└─────────────────────────────────────────────┘");
-                return;
-            }
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Ajuste de todos os dados do item         │");
+        System.out.println("│                                             │");
+        System.out.println("│    1- Concluir ajuste                       │");
+        System.out.println("│    2- Cancelar ajuste                       │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        int option = Main.read.nextInt();
+
+        if (option == 1 & Item.ajustar(index, name, codigo, price))
+        {
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Ajuste de todos os dados do item         │");
+            System.out.println("│                                             │");
+            System.out.println("│    Item ajustado com sucesso.               │");
+            System.out.println("└─────────────────────────────────────────────┘");
             return;
         }
         System.out.println("┌─────────────────────────────────────────────┐");
@@ -243,7 +251,7 @@ public class Proprietario
         System.out.println("│                                             │");
         System.out.println("│  • Ajuste de todos os dados do item         │");
         System.out.println("│                                             │");
-        System.out.println("│    Item não encontrado.                     │");
+        System.out.println("│    Ajuste cancelado.                        │");
         System.out.println("└─────────────────────────────────────────────┘");
     }
 }

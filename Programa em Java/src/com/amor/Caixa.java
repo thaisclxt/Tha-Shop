@@ -236,7 +236,7 @@ public class Caixa
 
     public static double total()
     {
-        double total = 0;
+        /*double total = 0;
 
         for (Item item : caixa)
         {
@@ -244,6 +244,9 @@ public class Caixa
         }
 
         return total;
+        */
+
+        return caixa.stream().mapToDouble(Item::getPrice).sum();
     }
 
     public static int conclue()

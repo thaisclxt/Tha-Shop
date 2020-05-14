@@ -284,7 +284,7 @@ public class Caixa
         System.out.println("└─────────────────────────────────────────────┘");
 
         double valor = Double.parseDouble(Main.read.next());
-        double troco = valor - caixa.stream().mapToDouble(Item::getPrice).sum();
+        double troco = valor - total();
 
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");

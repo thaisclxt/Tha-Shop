@@ -25,9 +25,11 @@ public class Cliente
             }
             System.out.println("│    4- Trocar recipiente                     │");
             if (! container.getRecipiente().isEmpty())
-            System.out.println("│    5- Prever custo total                    │");
-            System.out.println("│    6- Cancelar compra                       │");
-            System.out.println("│    7- Confirmar compra                      │");
+            {
+                System.out.println("│    5- Prever custo total                    │");
+                System.out.println("│    6- Cancelar compra                       │");
+                System.out.println("│    7- Confirmar compra                      │");
+            }
             System.out.println("│    0- Voltar para o Menu Inicial            │");
             System.out.println("└─────────────────────────────────────────────┘");
 
@@ -35,33 +37,16 @@ public class Cliente
 
             switch (option)
             {
-                case 1:
-                    add();
-                    break;
-                case 2:
-                    remove();
-                    break;
-                case 3:
-                    container.show();
-                    break;
-                case 4:
-                    change();
-                    break;
-                case 5:
-                    preview();
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    Caixa.login();
-                    break;
-                case 171:
-                    break;
-                case 0:
-                    Main.main(null, 0);
-                    break;
-                default:
-                    break;
+                case 1: add(); break;
+                case 2: remove(); break;
+                case 3: container.show(); break;
+                case 4: change(); break;
+                case 5: preview(); break;
+                case 6: Caixa.cancel(); break;
+                case 7: Caixa.login(); break;
+                case 171: steal(); break;
+                case 0: Main.main(null); break;
+                default: break;
             }
             if (option == 0) { break; }
         }
@@ -201,5 +186,10 @@ public class Cliente
         System.out.println("│                                             │");
         System.out.printf("│    R$ %.2f                                 │\n", Caixa.total());
         System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static void steal()
+    {
+
     }
 }

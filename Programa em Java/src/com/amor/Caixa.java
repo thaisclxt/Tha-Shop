@@ -50,7 +50,7 @@ public class Caixa
             System.out.println("┌─────────────────────────────────────────────┐");
             System.out.println("│ ############# T H A Í S H O P ############# │");
             System.out.println("│                                             │");
-            System.out.println("│  • Login como Caixa                         │");
+            System.out.println("│  • Tela para o caixa                        │");
             System.out.println("│                                             │");
             System.out.println("│    1- Exibição da compra do cliente         │");
             System.out.println("│    2- Adição dos itens do cliente           │");
@@ -68,29 +68,14 @@ public class Caixa
 
             switch (option)
             {
-                case 1:
-                    Cliente.container.show();
-                    break;
-                case 2:
-                    add();
-                    break;
-                case 3:
-                    remove();
-                    break;
-                case 4:
-                    pay();
-                    break;
-                case 5:
-                    conclue();
-                    break;
-                case 6:
-                    cancel();
-                    break;
-                case 0:
-                    Cliente.login();
-                    break;
-                default:
-                    break;
+                case 1: Cliente.container.show(); break;
+                case 2: add(); break;
+                case 3: remove(); break;
+                case 4: pay(); break;
+                case 5: conclue(); break;
+                case 6: cancel(); break;
+                case 0: Cliente.login(); break;
+                default: break;
             }
             if (option == 0) { break; }
         }
@@ -333,7 +318,5 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│    Compra cancelada com sucesso.            │");
         System.out.println("└─────────────────────────────────────────────┘");
-
-        Main.main(null, 1);
     }
 }

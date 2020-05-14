@@ -5,10 +5,8 @@ public class Main
 {
     public static Scanner read = new Scanner(System.in);
     public static Scanner readString = new Scanner(System.in);
-    public static void main(String[] args, int close)
+    public static void main(String[] args)
     {
-        if (close == 1) { return; }
-
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
@@ -33,7 +31,7 @@ public class Main
             case 0:
                 return;
             default:
-                main(args, 0);
+                main(args);
         }
     }
 }

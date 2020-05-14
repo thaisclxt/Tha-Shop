@@ -39,7 +39,6 @@ public class Caixa
             if (option == 0) { return; }
             else { login(); }
         }
-        return;
     }
 
     public static void caixa()
@@ -71,7 +70,7 @@ public class Caixa
                 case 2: add(); break;
                 case 3: remove(); break;
                 case 4: pay(); break;
-                case 5: conclue(); break;
+                case 5: if (conclue() == 0) { return; } break;
                 case 6: if (cancel() == 0) { return; } break;
                 case 0: return;
                 default: break;
@@ -247,7 +246,7 @@ public class Caixa
         return total;
     }
 
-    public static void conclue()
+    public static int conclue()
     {
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
@@ -264,15 +263,34 @@ public class Caixa
 
         switch (conclue)
         {
-            case 1: receive(); break;
-            case 0: return;
+            case 1: receive(); return 0;
+            case 0: return 1;
             default: conclue(); break;
         }
+        return 1;
     }
 
     public static void receive()
     {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Concluir compra                          │");
+        System.out.println("│                                             │");
+        System.out.println("│    Entre com a quantia paga pelo cliente.   │");
+        System.out.println("└─────────────────────────────────────────────┘");
 
+        double valor = Double.parseDouble(Main.read.next());
+        double troco = valor - caixa.stream().mapToDouble(Item::getPrice).sum();
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Compra concluída com sucesso             │");
+        System.out.println("│                                             │");
+        System.out.println("│    ThaíShop agrade. Volte sempre! :)        │");
+        System.out.printf("│    Troco: R$ %.2f                          │\n", troco);
+        System.out.println("└─────────────────────────────────────────────┘");
     }
 
     public static int cancel()

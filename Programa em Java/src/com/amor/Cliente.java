@@ -197,6 +197,43 @@ public class Cliente
 
     public static void steal()
     {
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Opção secreta: Roubar                    │");
+        System.out.println("│                                             │");
+        System.out.println("│    Tem certeza que deseja roubar ?          │");
+        System.out.println("│                                             │");
+        System.out.println("│    \"Não furtarás.\" - Êxodo 20:15            │");
+        System.out.println("│                                             │");
+        System.out.println("│    1- Sim                                   │");
+        System.out.println("│    0- Não                                   │");
+        System.out.println("└─────────────────────────────────────────────┘");
 
+        int areYouSure = Main.read.nextInt();
+
+        if (areYouSure != 1)
+        {
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Opção secreta: Roubar                    │");
+            System.out.println("│                                             │");
+            System.out.println("│    Ótima opção! Vá e não peques mais.       │");
+            System.out.println("└─────────────────────────────────────────────┘");
+            return;
+        }
+
+        double chance = 1 / Math.pow(2, container.getSize());
+        double limInferior = -0.02804;
+        double limSuperior = 0.5;
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Opção secreta: Roubar                    │");
+        System.out.println("│                                             │");
+        System.out.println("│    Furto realizado com sucesso. :(          │");
+        System.out.println("└─────────────────────────────────────────────┘");
     }
 }

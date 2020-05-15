@@ -291,9 +291,50 @@ public class Caixa
         System.out.println("│                                             │");
         System.out.println("│  • Compra concluída com sucesso             │");
         System.out.println("│                                             │");
-        System.out.println("│    ThaíShop agrade. Volte sempre! :)        │");
+        System.out.println("│    ThaíShop agradece. Volte sempre! :)      │");
+        System.out.println("│                                             │");
         System.out.printf("│    Troco: R$ %.2f                          │\n", troco);
+        System.out.println("│                                             │");
+        notasEmoedas(troco);
         System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static void notasEmoedas(double troco)
+    {
+        int notas = (int) troco;
+        int moedas = (int) ((troco - notas) * 100);
+
+        String NOTAS;
+        String MOEDAS;
+
+        NOTAS = "│    Troco em NOTAS:                          │\n";
+        NOTAS += String.format("|    %d nota(s) de R$ 100.00                   |\n", notas / 100);
+        notas %= 100;
+        NOTAS += String.format("|    %d nota(s) de R$ 50.00                    |\n", notas / 50);
+        notas %= 50;
+        NOTAS += String.format("|    %d nota(s) de R$ 20.00                    |\n", notas / 20);
+        notas %= 20;
+        NOTAS += String.format("|    %d nota(s) de R$ 10.00                    |\n", notas / 10);
+        notas %= 10;
+        NOTAS += String.format("|    %d nota(s) de R$ 5.00                     |\n", notas / 5);
+        notas %= 5;
+        NOTAS += String.format("|    %d nota(s) de R$ 2.00                     |\n", notas / 2);
+        notas %= 2;
+
+        MOEDAS = "│                                             │\n";
+        MOEDAS += "│    Troco em MOEDAS:                         │\n";
+        MOEDAS += String.format("|    %d moeda(s) de R$ 1.00                    |\n", notas);
+        MOEDAS += String.format("|    %d moeda(s) de R$ 0.50                    |\n", moedas / 50);
+        moedas %= 50;
+        MOEDAS += String.format("|    %d moeda(s) de R$ 0.25                    |\n", moedas / 25);
+        moedas %= 25;
+        MOEDAS += String.format("|    %d moeda(s) de R$ 0.10                    |\n", moedas / 10);
+        moedas %= 10;
+        MOEDAS += String.format("|    %d moeda(s) de R$ 0.05                    |\n", moedas / 5);
+        moedas %= 5;
+        MOEDAS += String.format("|    %d moeda(s) de R$ 0.01                    |", moedas);
+
+        System.out.println(NOTAS + MOEDAS);
     }
 
     public static int cancel()

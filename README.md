@@ -2,25 +2,67 @@
 
 ## Classes
 
+- [X] Proprietario
+  - [X] Atributos
+  - [X] Métodos
+    - [X] Login
+    - [X] Tela para manutenção do mercado
+    - [X] Carregar uma lista padrão de itens
+    - [X] Adicionar itens à venda
+    - [X] Remover itens à venda
+    - [X] Exibir itens à venda
+    - [X] Ajustar todos os dados do item
 - [X] Item
   - [X] Atributos
     - [X] Nome do produto
     - [X] Código do produto
     - [X] Valor do produto
-- [X] Recipientes
+  - [X] Métodos
+    - [X] Imprimir dados dos itens
+    - [X] Ajustar todos os dados do item
+- [X] Mercado
   - [X] Atributos
-    - [X] Carrinho grande
-    - [X] Carrinho pequeno
-    - [X] Cesta
-  - [ ] Métodos
-    - [ ] Adição de itens no recipiente
-    - [ ] Remoção de itens
-    - [ ] Exibição de itens
-    - [ ] Trocar recipiente
-    - [ ] Prever custo total
-    - [ ] Cancelar compra
-    - [ ] Confirmar compra
-    - [ ] Opção secreta: Roubar
+    - [X] Lista de itens
+  - [X] Métodos
+    - [X] Adicionar itens no mercado
+    - [X] Listar itens do mercado
+    - [X] Remover itens do mercado
+- [X] Cliente
+  - [X] Atributos
+    - [X] Recipiente
+  - [X] Login
+  - [X] Escolher recipiente
+  - [X] Adicionar itens no recipiente
+  - [X] Remover itens do recipiente
+  - [X] Trocar recipiente
+  - [X] Prever custo total
+  - [X] Opção secreta: Roubar
+- [X] Recipiente
+  - [X] Atributos
+    - [X] Lista de recipientes
+    - [X] Tamanho
+  - [X] Métodos
+    - [X] Adicionar no recipiente
+    - [X] Mostrar itens do recipiente
+- [X] Caixa
+  - [X] Atributos
+    - [X] Lista do caixa
+  - [X] Métodos
+    - [X] Login
+    - [X] Tela para o caixa 
+    - [X] Adicionar itens no caixa
+      - [X] Adicionar todos os itens do cliente
+      - [X] Adicionar itens individualmente
+    - [X] Remover itens do caixa
+      - [X] Remover tudo
+      - [X] Remover individualmente
+    - [X] Pagar
+    - [X] Total
+    - [X] Concluir comprar
+    - [X] Receber quantia paga
+    - [X] Notas e moedas
+    - [X] Cancelar compra
+
 
 ## Objetivo
 
@@ -35,27 +77,27 @@ Criar um programa pra simular um mercado.
     - [X] Ajuste de todos os dados do item
     - [X] Concluir ajustes
   - [X] Tela para o cliente
-    - [ ] Colocar itens no "recipiente"
-    - [ ] Remover itens
-    - [ ] Ver todos os itens atuais
-    - [ ] Trocar "recipiente"
-    - [ ] Prever custo total
-    - [ ] Cancelar compra
-    - [ ] Confirmar compra
-    - [ ] *Opção secreta: Roubar*
+    - [X] Colocar itens no "recipiente"
+    - [X] Remover itens
+    - [X] Ver todos os itens atuais
+    - [X] Trocar "recipiente"
+    - [X] Prever custo total
+    - [X] Cancelar compra
+    - [X] Confirmar compra
+    - [X] *Opção secreta: Roubar*
   - [X] Tela para o Caixa
-    - [ ] Exibição do total
-    - [ ] Exibição da lista de compras do cliente
-    - [ ] Adicionar itens
-      - [ ] Adicionar todos os itens do cliente
-      - [ ] Adicionar itens individualmente
-    - [ ] Remover itens
-      - [ ] Remover tudo
-      - [ ] Remover individualmente
-    - [ ] Cancelar compra
-    - [ ] Receber a quantia paga pelo cliente
-    - [ ] Exibir como retornar o troco, em notas e moedas
-    - [ ] Concluir compra
+    - [X] Exibição do total
+    - [X] Exibição da lista de compras do cliente
+    - [X] Adicionar itens
+      - [X] Adicionar todos os itens do cliente
+      - [X] Adicionar itens individualmente
+    - [X] Remover itens
+      - [X] Remover tudo
+      - [X] Remover individualmente
+    - [X] Cancelar compra
+    - [X] Receber a quantia paga pelo cliente
+    - [X] Exibir como retornar o troco, em notas e moedas
+    - [X] Concluir compra
 
 ### Observações
 

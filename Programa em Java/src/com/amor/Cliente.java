@@ -171,12 +171,14 @@ public class Cliente
         System.out.println("│    2- Carrinho pequeno (35 itens)           │");
         if (container.getSize() != 20)
         System.out.println("│    3- Cesta (20 itens)                      │");
+        System.out.println("│    0- Voltar                                │");
         System.out.println("└─────────────────────────────────────────────┘");
 
         int change = Main.read.nextInt();
 
         switch (change)
         {
+            case 0: return;
             case 1: change = 25; break;
             case 2: change = 15; break;
             case 3: change = 20; break;

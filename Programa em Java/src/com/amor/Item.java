@@ -30,18 +30,32 @@ public class Item
         System.out.println("─────────────────────────────────────────────");
     }
 
-    public static boolean ajustar(int index, String name, int code, double price)
+    public static void ajustar(int index, String name, int code, double price)
     {
-        if (Mercado.getListaItens().size() > index)
+        for (Item item : Mercado.getListaItens())
         {
-            Mercado.getListaItens().get(index).setName(name);
-            Mercado.getListaItens().get(index).setCode(code);
-            Mercado.getListaItens().get(index).setPrice(price);
-            return true;
+            if (item.getCode() == code)
+            {
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Ajustar todos os dados do item           │");
+                System.out.println("│                                             │");
+                System.out.println("│    Falha no ajuste! Este código já existe.  │");
+                System.out.println("└─────────────────────────────────────────────┘");
+                return;
+            }
         }
-        else
-        {
-            return false;
-        }
+        Mercado.getListaItens().get(index).setName(name);
+        Mercado.getListaItens().get(index).setCode(code);
+        Mercado.getListaItens().get(index).setPrice(price);
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Ajustar todos os dados do item           │");
+        System.out.println("│                                             │");
+        System.out.println("│    Item ajustado com sucesso.               │");
+        System.out.println("└─────────────────────────────────────────────┘");
     }
 }

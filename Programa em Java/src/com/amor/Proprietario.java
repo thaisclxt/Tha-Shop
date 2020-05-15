@@ -50,12 +50,12 @@ public class Proprietario
             System.out.println("│  • Tela para manutenção do mercado          │");
             System.out.println("│                                             │");
             System.out.println("│    1- Carregar uma lista padrão de itens    │");
-            System.out.println("│    2- Adição de itens à venda               │");
+            System.out.println("│    2- Adicionar item à venda                │");
             if (! Mercado.getListaItens().isEmpty())
             {
-                System.out.println("│    3- Remoção de itens à venda              │");
+                System.out.println("│    3- Remover item à venda                  │");
                 System.out.println("│    4- Exibir itens que estão à venda        │");
-                System.out.println("│    5- Ajuste de todos os dados do item      │");
+                System.out.println("│    5- Ajustar todos os dados do item        │");
             }
             System.out.println("│    0- Voltar para o Menu Inicial            │");
             System.out.println("└─────────────────────────────────────────────┘");
@@ -97,53 +97,14 @@ public class Proprietario
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
-        System.out.println("│  • Adição de itens à venda                  │");
-        System.out.println("│                                             │");
-        System.out.println("│    Quantos itens deseja adicionar ?         │");
-        System.out.println("└─────────────────────────────────────────────┘");
-
-        int quantidade = Main.read.nextInt();
-
-        System.out.println("┌─────────────────────────────────────────────┐");
-        System.out.println("│ ############# T H A Í S H O P ############# │");
-        System.out.println("│                                             │");
-        System.out.println("│  • Adição de itens à venda                  │");
+        System.out.println("│  • Adicionar item à venda                   │");
         System.out.println("│                                             │");
         System.out.println("│    Primeiramente, informe o nome do         │");
         System.out.println("│    produto, segundamente, o código e por    │");
         System.out.println("│    fim, o valor a ser pago.                 │");
         System.out.println("└─────────────────────────────────────────────┘");
 
-        for (int add = 0; add < quantidade; add++)
-        {
-            String name = Main.readString.nextLine();
-            int code = Main.read.nextInt();
-            double price = Double.parseDouble(Main.read.next());
-
-            Mercado.getListaItens().forEach(x ->
-            {
-                if (x.getCode() == code)
-                {
-                    System.out.println("┌─────────────────────────────────────────────┐");
-                    System.out.println("│ ############# T H A Í S H O P ############# │");
-                    System.out.println("│                                             │");
-                    System.out.println("│  • Adição de itens à venda                  │");
-                    System.out.println("│                                             │");
-                    System.out.println("│    Não foi possível adicionar item.         │");
-                    System.out.println("└─────────────────────────────────────────────┘");
-                    return;
-                }
-            });
-            Mercado.add(new Item(name, code, price));
-
-            System.out.println("┌─────────────────────────────────────────────┐");
-            System.out.println("│ ############# T H A Í S H O P ############# │");
-            System.out.println("│                                             │");
-            System.out.println("│  • Adição de itens à venda                  │");
-            System.out.println("│                                             │");
-            System.out.println("│    Item adicionado com sucesso.             │");
-            System.out.println("└─────────────────────────────────────────────┘");
-        }
+        Mercado.add(new Item(Main.readString.nextLine(), Main.read.nextInt(), Double.parseDouble(Main.read.next())));
     }
 
     private static void remover()
@@ -151,7 +112,7 @@ public class Proprietario
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
-        System.out.println("│  • Remoção de itens à venda                 │");
+        System.out.println("│  • Remover item à venda                     │");
         System.out.println("│                                             │");
         System.out.println("│    Informe o código do produto que deseja   │");
         System.out.println("│    remover.                                 │");
@@ -164,7 +125,7 @@ public class Proprietario
             System.out.println("┌─────────────────────────────────────────────┐");
             System.out.println("│ ############# T H A Í S H O P ############# │");
             System.out.println("│                                             │");
-            System.out.println("│  • Remoção de itens à venda                 │");
+            System.out.println("│  • Remover item à venda                     │");
             System.out.println("│                                             │");
             System.out.println("│    Item removido com sucesso.               │");
             System.out.println("└─────────────────────────────────────────────┘");
@@ -174,7 +135,7 @@ public class Proprietario
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
-        System.out.println("│  • Remoção de itens à venda                 │");
+        System.out.println("│  • Remover item à venda                     │");
         System.out.println("│                                             │");
         System.out.println("│    Item não encontrado.                     │");
         System.out.println("└─────────────────────────────────────────────┘");
@@ -199,7 +160,7 @@ public class Proprietario
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
-        System.out.println("│  • Ajuste de todos os dados do item         │");
+        System.out.println("│  • Ajustar todos os dados do item           │");
         System.out.println("│                                             │");
         System.out.println("│    Informe o index do produto que deseja    │");
         System.out.println("│    ajustar e em seguida, os novos dados do  │");
@@ -213,7 +174,7 @@ public class Proprietario
             System.out.println("┌─────────────────────────────────────────────┐");
             System.out.println("│ ############# T H A Í S H O P ############# │");
             System.out.println("│                                             │");
-            System.out.println("│  • Ajuste de todos os dados do item         │");
+            System.out.println("│  • Ajustar todos os dados do item           │");
             System.out.println("│                                             │");
             System.out.println("│    Item não encontrado.                     │");
             System.out.println("└─────────────────────────────────────────────┘");
@@ -227,31 +188,26 @@ public class Proprietario
         System.out.println("┌─────────────────────────────────────────────┐");
         System.out.println("│ ############# T H A Í S H O P ############# │");
         System.out.println("│                                             │");
-        System.out.println("│  • Ajuste de todos os dados do item         │");
+        System.out.println("│  • Ajustar todos os dados do item           │");
         System.out.println("│                                             │");
         System.out.println("│    1- Concluir ajuste                       │");
-        System.out.println("│    2- Cancelar ajuste                       │");
+        System.out.println("│    0- Cancelar ajuste                       │");
         System.out.println("└─────────────────────────────────────────────┘");
 
         int option = Main.read.nextInt();
 
-        if (option == 1 & Item.ajustar(index, name, codigo, price))
+        if (option != 1)
         {
             System.out.println("┌─────────────────────────────────────────────┐");
             System.out.println("│ ############# T H A Í S H O P ############# │");
             System.out.println("│                                             │");
-            System.out.println("│  • Ajuste de todos os dados do item         │");
+            System.out.println("│  • Ajustar todos os dados do item           │");
             System.out.println("│                                             │");
-            System.out.println("│    Item ajustado com sucesso.               │");
+            System.out.println("│    Ajuste cancelado.                        │");
             System.out.println("└─────────────────────────────────────────────┘");
             return;
         }
-        System.out.println("┌─────────────────────────────────────────────┐");
-        System.out.println("│ ############# T H A Í S H O P ############# │");
-        System.out.println("│                                             │");
-        System.out.println("│  • Ajuste de todos os dados do item         │");
-        System.out.println("│                                             │");
-        System.out.println("│    Ajuste cancelado.                        │");
-        System.out.println("└─────────────────────────────────────────────┘");
+
+        Item.ajustar(index, name, codigo, price);
     }
 }

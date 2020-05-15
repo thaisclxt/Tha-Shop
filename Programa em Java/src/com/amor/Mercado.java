@@ -9,7 +9,31 @@ public class Mercado
 
     public static ArrayList<Item> getListaItens() { return listaItens; }
 
-    public static void add(Item item) { listaItens.add(item); }
+    public static void add(Item item)
+    {
+        for (Item x : listaItens)
+        {
+            if (x.getCode() == item.getCode())
+            {
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Adição de itens à venda                  │");
+                System.out.println("│                                             │");
+                System.out.println("│    Não foi possível adicionar item.         │");
+                System.out.println("└─────────────────────────────────────────────┘");
+                return;
+            }
+        }
+        listaItens.add(item);
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Adição de itens à venda                  │");
+        System.out.println("│                                             │");
+        System.out.println("│    Item adicionado com sucesso.             │");
+        System.out.println("└─────────────────────────────────────────────┘");
+    }
 
     public static void listar()
     {

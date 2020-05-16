@@ -45,10 +45,12 @@ public class Recipiente
 
     public void show()
     {
+        int number = 0;
         for (Item item : recipiente)
         {
-            System.out.println("\n  Item nº " + recipiente.indexOf(item) + ":\n");
+            System.out.println("\n  Item nº " + number + ":\n");
             item.imprimir();
+            number++;
         }
     }
 }

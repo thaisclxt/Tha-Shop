@@ -135,16 +135,30 @@ public class Cliente
 
         int code = Main.read.nextInt();
 
-        if (container.getRecipiente().removeIf(x -> x.getCode() == code))
+        for (Item item : container.getRecipiente())
         {
-            System.out.println("┌─────────────────────────────────────────────┐");
-            System.out.println("│ ############# T H A Í S H O P ############# │");
-            System.out.println("│                                             │");
-            System.out.println("│  • Remover item do recipiente               │");
-            System.out.println("│                                             │");
-            System.out.println("│    Item removido com sucesso.               │");
-            System.out.println("└─────────────────────────────────────────────┘");
-            return;
+            if (item.getCode() == code)
+            {
+                System.out.println("┌─────────────────────────────────────────────┐");
+                System.out.println("│ ############# T H A Í S H O P ############# │");
+                System.out.println("│                                             │");
+                System.out.println("│  • Remover item do recipiente               │");
+                System.out.println("│                                             │");
+                System.out.println("│    1- Remover todos os itens deste código   │");
+                System.out.println("│    2- Remover apenas 1 item deste código    │");
+                System.out.println("│    0- Cancelar remoção                      │");
+                System.out.println("└─────────────────────────────────────────────┘");
+
+                int remove = Main.read.nextInt();
+
+                switch (remove)
+                {
+                    case 1: removeAll(code); break;
+                    case 2: removeSingly(container.getRecipiente().indexOf(item)); break;
+                    case 0: return;
+                }
+                return;
+            }
         }
 
         System.out.println("┌─────────────────────────────────────────────┐");
@@ -153,6 +167,30 @@ public class Cliente
         System.out.println("│  • Remover item do recipiente               │");
         System.out.println("│                                             │");
         System.out.println("│    Item não encontrado.                     │");
+        System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static void removeAll(int code)
+    {
+        container.getRecipiente().removeIf(item -> item.getCode() == code);
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Remover item do recipiente               │");
+        System.out.println("│                                             │");
+        System.out.println("│    Itens removidos com sucesso.             │");
+        System.out.println("└─────────────────────────────────────────────┘");
+    }
+
+    public static void removeSingly(int index)
+    {
+        container.getRecipiente().remove(index);
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Remover item do recipiente               │");
+        System.out.println("│                                             │");
+        System.out.println("│    Item removido com sucesso.               │");
         System.out.println("└─────────────────────────────────────────────┘");
     }
 

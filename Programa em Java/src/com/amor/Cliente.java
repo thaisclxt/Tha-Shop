@@ -267,7 +267,6 @@ public class Cliente
 
         Random x = new Random();
         int chance = x.nextInt((int) Math.pow(2, container.getRecipiente().size())) + 1;
-        System.out.println(chance);
 
         if (chance == 1)
         {

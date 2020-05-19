@@ -40,7 +40,7 @@ public class Cliente
                 case 5: preview(); break;
                 case 6: if (Caixa.cancel() == 0); return;
                 case 7: Caixa.login(); break;
-                case 171: if (steal() == 1) return;
+                case 171: if (steal() == 1) break; else return;
                 case 0: return;
                 default: break;
             }
@@ -262,7 +262,7 @@ public class Cliente
             System.out.println("│                                             │");
             System.out.println("│    Ótima opção! Vá e não peques mais.       │");
             System.out.println("└─────────────────────────────────────────────┘");
-            return 0;
+            return 1;
         }
 
         Random x = new Random();
@@ -278,16 +278,7 @@ public class Cliente
             System.out.println("│                                             │");
             System.out.println("│    Furto realizado com sucesso.             │");
             System.out.println("└─────────────────────────────────────────────┘");
-
-            System.out.println("┌─────────────────────────────────────────────┐");
-            System.out.println("│ ############# T H A Í S H O P ############# │");
-            System.out.println("│                                             │");
-            System.out.println("│  • Polícia 190                              │");
-            System.out.println("│                                             │");
-            System.out.println("│    Você está preso!!                        │");
-            System.out.println("└─────────────────────────────────────────────┘");
-
-            return 1;
+            return 0;
         }
 
         System.out.println("┌─────────────────────────────────────────────┐");
@@ -296,6 +287,14 @@ public class Cliente
         System.out.println("│  • Opção secreta: Roubar                    │");
         System.out.println("│                                             │");
         System.out.println("│    Furto realizado com fracasso.            │");
+        System.out.println("└─────────────────────────────────────────────┘");
+
+        System.out.println("┌─────────────────────────────────────────────┐");
+        System.out.println("│ ############# T H A Í S H O P ############# │");
+        System.out.println("│                                             │");
+        System.out.println("│  • Polícia 190                              │");
+        System.out.println("│                                             │");
+        System.out.println("│    Você está preso!!                        │");
         System.out.println("└─────────────────────────────────────────────┘");
         return 0;
     }

@@ -276,8 +276,17 @@ public class Cliente
             System.out.println("│                                             │");
             System.out.println("│  • Opção secreta: Roubar                    │");
             System.out.println("│                                             │");
-            System.out.println("│    Furto realizado com sucesso. :(          │");
+            System.out.println("│    Furto realizado com sucesso.             │");
             System.out.println("└─────────────────────────────────────────────┘");
+
+            System.out.println("┌─────────────────────────────────────────────┐");
+            System.out.println("│ ############# T H A Í S H O P ############# │");
+            System.out.println("│                                             │");
+            System.out.println("│  • Polícia 190                              │");
+            System.out.println("│                                             │");
+            System.out.println("│    Você está preso!!                        │");
+            System.out.println("└─────────────────────────────────────────────┘");
+
             return 1;
         }
 
